@@ -1,0 +1,14 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: flux-webhook-route
+  namespace: flux-system
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`fluxhook.trivernis.dev`)
+    kind: Rule
+    services:
+    - name: webhook-receiver
+      port: 80
