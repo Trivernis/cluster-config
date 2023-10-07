@@ -7,3 +7,15 @@ metadata:
   namespace: plantwiki
 resources:
   - plantwiki/deploy.yaml
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: searxng
+metadata:
+  name: searxng
+  namespace: searxng
+resources:
+  - searxng/namespace.yaml
+  - searxng/config.yaml
+  - searxng/deploy.yaml
+  - searxng/route.yaml
