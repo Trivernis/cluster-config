@@ -82,7 +82,7 @@ spec:
           subPath: files
       containers:
       - name: recipes-nginx
-        image: nginx:alpine-slim
+        image: nginx:alpine
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 80

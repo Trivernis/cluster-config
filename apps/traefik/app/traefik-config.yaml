@@ -17,4 +17,4 @@ spec:
         port: 8022
         expose: true
         exposedPort: 8022
-        protocoL: TCP
+        protocol: TCP
