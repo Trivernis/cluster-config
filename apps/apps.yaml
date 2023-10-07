@@ -5,6 +5,7 @@ namespace: kube-system
 metadata:
   name: flux-webhook
 resources:
+  - flux/webhook-service.yaml
   - flux/webhook-route.yaml
   - flux/webhook-sealedsecret.yaml
   - flux/webhook-receiver.yaml
