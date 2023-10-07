@@ -36,3 +36,19 @@ resources:
   - searxng/config.yaml
   - searxng/deploy.yaml
   - searxng/route.yaml
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: tandoor
+metadata:
+  name: tandoor
+resources:
+  - tandoor/namespace.yaml
+  - tandoor/service-account.yaml
+  - searxng/recipes-sealedsecret.yaml
+  - tandoor/config.yaml
+  - tandoor/pvc.yaml
+  - tandoor/postgres.yaml
+  - searxng/deploy.yaml
+  - searxng/service.yaml
+  - searxng/route.yaml

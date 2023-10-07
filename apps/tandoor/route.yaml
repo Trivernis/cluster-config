@@ -1,0 +1,14 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: longhorn-route
+  namespace: longhorn-system
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`recipes.trivernis.dev`) || Host(`recipes.trivernis.net`)
+    kind: Rule
+    services:
+    - name: recipes-service
+      port: 80
