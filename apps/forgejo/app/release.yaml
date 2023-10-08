@@ -23,7 +23,7 @@ spec:
         - secret:
             secretName: forgejo-secret
       config:
-        APP_NAME: 'Forgejo: My super awesome Git Server.'      
+        APP_NAME: 'ClusterGit: My super awesome Git Server.'      
         server:
           DOMAIN: git.trivernis.dev
           SSH_DOMAIN: git.trivernis.dev
