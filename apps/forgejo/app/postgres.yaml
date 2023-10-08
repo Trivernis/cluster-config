@@ -7,7 +7,7 @@ spec:
    replicas: 1
    image: postgres:16-alpine
    database:
-      size: 10Gi
+      size: 5Gi
    env:
       - name: POSTGRES_PASSWORD
         valueFrom:
