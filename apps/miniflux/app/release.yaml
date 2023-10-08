@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: miniflux
+  namespace: miniflux
+spec:
+  releaseName: miniflux
+  chart:
+    spec:
+      chart: miniflux
+      sourceRef:
+        kind: HelmRepository
+        name: miniflux
+  interval: 50m
+  install:
+    remediation:
+      retries: 3
+  values:
+    postgresql:
+      enabled: false
+  valuesFrom:
+    - kind: Secret
+      name: miniflux-secret
+      valuesKey: values

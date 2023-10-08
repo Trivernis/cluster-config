@@ -1,0 +1,14 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: miniflux-route
+  namespace: miniflux
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`miniflux.trivernis.dev`) || Host(`miniflux.trivernis.net`)
+    kind: Rule
+    services:
+    - name: miniflux
+      port: 8080
