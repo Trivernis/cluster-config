@@ -1,0 +1,34 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: forgejo
+  namespace: forgejo
+spec:
+  releaseName: forgejo
+  chart:
+    spec:
+      chart: forgejo
+      sourceRef:
+        kind: HelmRepository
+        name: forgejo
+  interval: 60m
+  install:
+    remediation:
+      retries: 3
+  values:
+    gitea:
+      admin:
+        existingSecret: forgejo-admin-secret
+      additionalConfigSources:
+        - secret:
+            secretName: forgejo-secret
+      config:
+        APP_NAME: 'Forgejo: My super awesome Git Server.'      
+        server:
+          DOMAIN: git.trivernis.dev
+          SSH_DOMAIN: git.trivernis.dev
+          ROOT_URL: https://git.trivernis.dev
+    memcached:
+      enabled: true
+    postgresql:
+      enabled: false

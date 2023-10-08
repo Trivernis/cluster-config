@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: miniflux
+metadata:
+  name: miniflux
+resources:
+  - app/namespace.yaml
+  - app/forgejo-sealedsecret.yaml
+  - app/admin-sealedsecret.yaml
+  - app/postgres-sealedsecret.yaml
+  - app/postgres.yaml
+  - app/repository.yaml
+  - app/release.yaml
+  - app/route.yaml

@@ -1,0 +1,28 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: forgejo-route-http
+  namespace: forgejo
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`git.trivernis.dev`)
+    kind: Rule
+    services:
+    - name: forgejo-http
+      port: 3000
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: forgejo-route-ssh
+  namespace: forgejo
+spec:
+  entryPoints:
+    - ssh
+  routes:
+  - match: HostSNI(`*`)
+    services:
+    - name: forgejo-ssh
+      port: 22
