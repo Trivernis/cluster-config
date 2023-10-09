@@ -57,13 +57,11 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`plantwiki.trivernis.dev`)
+  - match: Host(`plantwiki.trivernis.dev, plantwiki.trivernis.net`)
     kind: Rule
-    services:
-    - name: plantwiki-srv
-      port: 80
-  - match: Host(`plantwiki.trivernis.net`)
-    kind: Rule
+    middlewares:
+      - name: strict-security-headers
+        namespace: default
     services:
     - name: plantwiki-srv
       port: 80

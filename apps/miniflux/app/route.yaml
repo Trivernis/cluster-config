@@ -7,8 +7,11 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`miniflux.trivernis.dev`) || Host(`miniflux.trivernis.net`)
+  - match: Host(`miniflux.trivernis.dev`, `miniflux.trivernis.net`)
     kind: Rule
+    middlewares:
+      - name: strict-security-headers
+        namespace: default
     services:
     - name: miniflux
-      port: 8080
+      port: http

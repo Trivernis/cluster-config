@@ -18,8 +18,11 @@ spec:
   routes:
   - match: Host(`longhorn.trivernis.net`)
     kind: Rule
+    middlewares:
+      - name: strict-security-headers
+        namespace: default
     services:
     - name: longhorn-frontend
-      port: 80
+      port: http
     middlewares:
       - name: longhorn-auth

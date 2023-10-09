@@ -9,9 +9,12 @@ spec:
   routes:
   - match: Host(`git.trivernis.dev`)
     kind: Rule
+    middlewares:
+      - name: strict-security-headers
+        namespace: default
     services:
     - name: forgejo-http
-      port: 3000
+      port: http
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRouteTCP
@@ -25,4 +28,4 @@ spec:
   - match: HostSNI(`*`)
     services:
     - name: forgejo-ssh
-      port: 22
+      port: ssh

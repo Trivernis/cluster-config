@@ -16,15 +16,20 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`status.cluster.trivernis.dev`) || Host(`status.cluster.trivernis.net`)
-    kind: Rule
-    services:
-    - name: uptime-kuma
-      port: 3001
-  - match: Host(`status.trivernis.dev`) || Host(`status.trivernis.net`)
+  - match: Host(`status.cluster.trivernis.dev`, `status.cluster.trivernis.net`)
     kind: Rule
     middlewares:
+      - name: strict-security-headers
+        namespace: default
+    services:
+    - name: uptime-kuma
+      port: http 
+  - match: Host(`status.trivernis.dev`, `status.trivernis.net`)
+    kind: Rule
+    middlewares:
+      - name: strict-security-headers
+        namespace: default
       - name: prefix-dashboard-services
     services:
     - name: uptime-kuma
-      port: 3001
+      port: http
