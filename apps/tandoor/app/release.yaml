@@ -23,6 +23,7 @@ spec:
       media:
         enabled: true
         storageClass: longhorn-hdd-crypto-global
+        accessMode: ReadWriteOnce
         size: 2Gi
     env:
       TIMEZONE: Europe/Berlin
