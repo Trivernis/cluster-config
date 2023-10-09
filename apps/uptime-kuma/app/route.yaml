@@ -1,0 +1,14 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: uptime-kuma-route
+  namespace: uptime-kuma
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`status.cluster.trivernis.dev`) || Host(`status.trivernis.dev`) || Host(`status.trivernis.net`)
+    kind: Rule
+    services:
+    - name: uptime-kuma
+      port: 3001
