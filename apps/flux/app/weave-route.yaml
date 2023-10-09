@@ -1,0 +1,17 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: weave-route
+  namespace: flux-system
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`gitops.trivernis.dev`)
+    kind: Rule
+    services:
+    - name: ww-gitops-weave-gitops
+      port: http
+    middlewares:
+      - name: strict-security-headers
+        namespace: default

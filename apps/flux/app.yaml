@@ -10,3 +10,4 @@ resources:
   - app/webhook-receiver.yaml
   - app/weave-sharedsecret.yaml
   - app/weave-release.yaml
+  - app/weave-router.yaml
