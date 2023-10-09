@@ -28,6 +28,8 @@ spec:
           DOMAIN: git.trivernis.dev
           SSH_DOMAIN: git.trivernis.dev
           ROOT_URL: https://git.trivernis.dev
+      metrics:
+        enabled: true
     memcached:
       enabled: true
     postgresql:
