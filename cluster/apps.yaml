@@ -29,7 +29,7 @@ spec:
     name: flux-system
   path: ./apps/longhorn
   prune: true
-  wait: true
+  wait: false
   timeout: 5m0s
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
