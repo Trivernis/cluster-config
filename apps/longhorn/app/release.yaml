@@ -4,6 +4,7 @@ metadata:
   name: longhorn
   namespace: longhorn-system
 spec:
+  suspend: true
   releaseName: longhorn
   chart:
     spec:
