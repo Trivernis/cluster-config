@@ -4,5 +4,6 @@ namespace: kube-system
 metadata:
   name: metrics
 resources:
+  - app/namespace.yaml
   - app/repository.yaml
   - app/release.yaml
