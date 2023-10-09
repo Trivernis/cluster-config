@@ -17,3 +17,13 @@ spec:
       retries: 3
   values:
     namespaceOverride: metrics
+    prometheusSpec:
+      storageSpec:
+        volumeClaimTemplate:
+            spec:
+              storageClassName: longhorn
+              accessMode: ["ReadWriteOnce"]
+              resources:
+                requests:
+                  storage: 5Gi
+
