@@ -24,7 +24,7 @@ spec:
   - match: Host(`status.trivernis.dev`) || Host(`status.trivernis.net`)
     kind: Rule
     middlewares:
-      - prefix-dashboard-services
+      - name: prefix-dashboard-services
     services:
     - name: uptime-kuma
       port: 3001
