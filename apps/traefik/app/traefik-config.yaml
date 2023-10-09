@@ -6,8 +6,8 @@ metadata:
 spec:
   valuesContent: |-
     additionalArguments:
-      - "--entryPoints.web.proxyProtocol.trustedIPs=10.0.0.254"
-      - "--entryPoints.web.forwardedHeaders.trustedIPs=10.0.0.254"
+      - "--entryPoints.web.proxyProtocol.trustedIPs=10.0.0.254,167.235.111.84"
+      - "--entryPoints.web.forwardedHeaders.trustedIPs=10.0.0.254,167.235.111.84"
       - "--providers.kubernetescrd.allowCrossNamespace=true"
     ports:
       web:
