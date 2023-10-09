@@ -1,15 +1,12 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
 metadata:
-  name: security-headers
-  namespace: default
+  name: tandoor-headers
+  namespace: tandoor
 spec:
   headers:
-    stsSeconds: 15768000
-    contentTypeNosniff: true
-    browserXssFilter: true
-    referrerPolicy: same-origin
-    customFrameOptionsValue: SAMEORIGIN
+    customRequestHeaders:
+      X-Forwarded-Proto: https
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
@@ -33,6 +30,7 @@ spec:
     middlewares:
       - name: security-headers
         namespace: default
+      - name: tandoor-headers
     services:
     - name: tandoor
       port: 8080
