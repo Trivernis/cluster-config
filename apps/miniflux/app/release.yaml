@@ -10,7 +10,8 @@ spec:
       chart: miniflux
       sourceRef:
         kind: HelmRepository
-        name: miniflux
+        name: gabe565
+        namespace: repos
   interval: 60m
   install:
     remediation:

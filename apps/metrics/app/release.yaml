@@ -10,7 +10,8 @@ spec:
       chart: kube-prometheus-stack
       sourceRef:
         kind: HelmRepository
-        name: prometheus
+        name: prometheus-community
+        namespace: repos
   interval: 60m
   install:
     remediation:

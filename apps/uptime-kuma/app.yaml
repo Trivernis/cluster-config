@@ -5,6 +5,5 @@ metadata:
   name: uptime-kuma
 resources:
   - app/namespace.yaml
-  - app/repository.yaml
   - app/release.yaml
   - app/route.yaml

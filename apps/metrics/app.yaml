@@ -6,6 +6,5 @@ metadata:
 resources:
   - app/namespace.yaml
   - app/metrics-sealedsecret.yaml
-  - app/repository.yaml
   - app/release.yaml
   - app/route.yaml

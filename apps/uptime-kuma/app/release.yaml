@@ -10,7 +10,8 @@ spec:
       chart: uptime-kuma
       sourceRef:
         kind: HelmRepository
-        name: uptime-kuma
+        name: irsigler
+        namespace: repos
   interval: 60m
   install:
     remediation:
