@@ -8,3 +8,5 @@ resources:
   - app/webhook-route.yaml
   - app/webhook-sealedsecret.yaml
   - app/webhook-receiver.yaml
+  - app/weave-sharedsecret.yaml
+  - app/weave-release.yaml
