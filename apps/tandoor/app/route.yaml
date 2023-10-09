@@ -1,14 +1,4 @@
 apiVersion: traefik.containo.us/v1alpha1
-kind: Middleware
-metadata:
-  name: tandoor-headers
-  namespace: tandoor
-spec:
-  headers:
-    frameDeny: true
-    browserXssFilter: true
----
-apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: recipes-route
@@ -24,8 +14,6 @@ spec:
       port: 80
   - match: Host(`recipes.trivernis.dev`) || Host(`recipes.trivernis.net`)
     kind: Rule
-    middlewares:
-      - name: tandoor-headers
     services:
     - name: tandoor
       port: 8080
