@@ -8,6 +8,7 @@ spec:
     additionalArguments:
       - "--entryPoints.web.proxyProtocol.trustedIPs=10.0.0.254"
       - "--entryPoints.web.forwardedHeaders.trustedIPs=10.0.0.254"
+      - "--providers.kubernetescrd.allowCrossNamespace=true"
     ports:
       web:
         exposedPort: 8000

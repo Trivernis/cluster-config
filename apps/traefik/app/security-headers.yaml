@@ -14,4 +14,4 @@ spec:
     customResponseHeaders:
       X-Robots-Tag: noindex,nofollow
       X-Download-Options: noopen
-      X-Powered-By: coffee X-Powered-By
+      X-Powered-By: coffee
