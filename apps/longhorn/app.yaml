@@ -4,10 +4,12 @@ namespace: kube-system
 metadata:
   name: longhorn
 resources:
+  - app/minio-sealedsecret.yaml
+  - app/repository.yaml
+  - app/release.yaml
   - app/crypto-sealedsecret.yaml
   - app/crypto-storageclass.yaml
   - app/hddcrypto-storageclass.yaml
   - app/hdd-storageclass.yaml
-  - app/minio-sealedsecret.yaml
   - app/longhorn-sealedsecret.yaml
   - app/route.yaml

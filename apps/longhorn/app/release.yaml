@@ -1,0 +1,22 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: longhorn
+  namespace: longhorn-system
+spec:
+  releaseName: longhorn
+  chart:
+    spec:
+      chart: longhorn
+      sourceRef:
+        kind: HelmRepository
+        name: longhorn
+  interval: 60m
+  install:
+    remediation:
+      retries: 3
+  values:
+    defaultSettings:
+      backupTarget: s3://longhorn-backup@eu-central/
+      backupTargetCredentialSecret: minio-secret
+      defaultReplicaCount: 2
