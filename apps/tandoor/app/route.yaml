@@ -1,4 +1,17 @@
 apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: security-headers
+  namespace: default
+spec:
+  headers:
+    stsSeconds: 15768000
+    contentTypeNosniff: true
+    browserXssFilter: true
+    referrerPolicy: same-origin
+    customFrameOptionsValue: SAMEORIGIN
+---
+apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: recipes-route
@@ -9,11 +22,17 @@ spec:
   routes:
   - match: (Host(`recipes.trivernis.dev`) || Host(`recipes.trivernis.net`)) && (Path(`/media`) || Path(`/static`))
     kind: Rule
+    middlewares:
+      - name: security-headers
+        namespace: default
     services:
     - name: tandoor
       port: 80
   - match: Host(`recipes.trivernis.dev`) || Host(`recipes.trivernis.net`)
     kind: Rule
+    middlewares:
+      - name: security-headers
+        namespace: default
     services:
     - name: tandoor
       port: 8080

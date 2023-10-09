@@ -5,3 +5,5 @@ metadata:
   name: traefik
 resources:
   - app/traefik-config.yaml
+  - app/security-headers.yaml
+  - app/strict-security-headers.yaml

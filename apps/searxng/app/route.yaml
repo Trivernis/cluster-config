@@ -9,6 +9,9 @@ spec:
   routes:
   - match: Host(`search.trivernis.dev`) || Host(`search.trivernis.net`)
     kind: Rule
+    middlewares:
+      - name: strict-security-headers
+        namespace: default
     services:
     - name: searxng-srv
       port: 8080

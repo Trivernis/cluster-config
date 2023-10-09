@@ -1,0 +1,18 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: strict-security-headers
+  namespace: default
+spec:
+  headers:
+    stsSeconds: 15768000
+    contentTypeNosniff: true
+    browserXssFilter: true
+    referrerPolicy: no-referrer
+    frameDeny: true
+
+    customResponseHeaders:
+      X-Robots-Tag: noindex,nofollow
+      X-Download-Options: noopen
+      X-Permitted-Cross-Domain-Policies: none
+      X-Powered-By: coffee X-Powered-By
