@@ -18,6 +18,8 @@ spec:
   values:
     namespaceOverride: metrics
     prometheus:
+      monitor:
+        interval: 10s
       prometheusSpec:
         storageSpec:
           volumeClaimTemplate:
