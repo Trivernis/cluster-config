@@ -10,17 +10,10 @@ spec:
   - match: (Host(`recipes.trivernis.dev`) || Host(`recipes.trivernis.net`)) && (Path(`/media`) || Path(`/static`))
     kind: Rule
     services:
-    - name: recipes-service
+    - name: tandoor
       port: 80
   - match: Host(`recipes.trivernis.dev`) || Host(`recipes.trivernis.net`)
     kind: Rule
     services:
-    - name: recipes-service
+    - name: tandoor
       port: 8080
-      passHostHeader: true
-      sticky:
-        cookie:
-          httpOnly: false
-          name: cookie
-          secure: true
-          sameSite: none
