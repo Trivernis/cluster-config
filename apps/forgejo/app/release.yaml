@@ -10,7 +10,8 @@ spec:
       chart: forgejo
       sourceRef:
         kind: HelmRepository
-        name: forgejo
+        name: forgejo-contrib
+        namespace: repos
   interval: 60m
   install:
     remediation:
