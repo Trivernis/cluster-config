@@ -17,3 +17,10 @@ spec:
     services:
     - name: recipes-service
       port: 8080
+      passHostHeader: true
+      sticky:
+        cookie:
+          httpOnly: false
+          name: cookie
+          secure: true
+          sameSite: none
