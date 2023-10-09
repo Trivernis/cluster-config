@@ -4,6 +4,8 @@ metadata:
   name: apps-flux
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: repos
   interval: 5m
   sourceRef:
     kind: GitRepository
@@ -16,24 +18,11 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: apps-forgejo
-  namespace: flux-system
-spec:
-  interval: 5m
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
-  path: ./apps/forgejo
-  prune: true
-  wait: true
-  timeout: 5m0s
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1
-kind: Kustomization
-metadata:
   name: apps-longhorn
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: repos
   interval: 5m
   sourceRef:
     kind: GitRepository
@@ -46,9 +35,30 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
+  name: apps-forgejo
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: repos
+    - name: apps-longhorn
+  interval: 5m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./apps/forgejo
+  prune: true
+  wait: true
+  timeout: 5m0s
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
   name: apps-metrics
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: repos
+    - name: apps-longhorn
   interval: 5m
   sourceRef:
     kind: GitRepository
@@ -64,6 +74,9 @@ metadata:
   name: apps-uptime-kuma
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: repos
+    - name: apps-longhorn
   interval: 5m
   sourceRef:
     kind: GitRepository
@@ -79,6 +92,8 @@ metadata:
   name: apps-plantwiki
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: repos
   interval: 5m
   sourceRef:
     kind: GitRepository
@@ -94,6 +109,8 @@ metadata:
   name: apps-searxng
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: repos
   interval: 5m
   sourceRef:
     kind: GitRepository
@@ -109,6 +126,9 @@ metadata:
   name: apps-tandoor
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: repos
+    - name: apps-longhorn
   interval: 5m
   sourceRef:
     kind: GitRepository
@@ -124,6 +144,9 @@ metadata:
   name: apps-traefik
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: repos
+    - name: apps-longhorn
   interval: 5m
   sourceRef:
     kind: GitRepository
@@ -139,6 +162,8 @@ metadata:
   name: apps-miniflux
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: repos
   interval: 5m
   sourceRef:
     kind: GitRepository
