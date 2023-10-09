@@ -4,7 +4,7 @@ metadata:
   name: prometheus
   namespace: metrics
 spec:
-  releaseName: prometheus
+  releaseName: prometheus-stack
   chart:
     spec:
       chart: kube-prometheus-stack
@@ -17,13 +17,14 @@ spec:
       retries: 3
   values:
     namespaceOverride: metrics
-    prometheusSpec:
-      storageSpec:
-        volumeClaimTemplate:
-            spec:
-              storageClassName: longhorn
-              accessMode: ["ReadWriteOnce"]
-              resources:
-                requests:
-                  storage: 5Gi
+    prometheus:
+      prometheusSpec:
+        storageSpec:
+          volumeClaimTemplate:
+              spec:
+                storageClassName: longhorn
+                accessModes: ["ReadWriteOnce"]
+                resources:
+                  requests:
+                    storage: 5Gi
 
