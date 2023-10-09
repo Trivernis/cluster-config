@@ -7,7 +7,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`status.cluster.trivernis.dev`) || Host(`status.trivernis.dev`) || Host(`status.trivernis.net`)
+  - match: Host(`status.cluster.trivernis.dev`) || Host(`status.cluster.trivernis.net`) || Host(`status.trivernis.dev`) || Host(`status.trivernis.net`)
     kind: Rule
     services:
     - name: uptime-kuma
