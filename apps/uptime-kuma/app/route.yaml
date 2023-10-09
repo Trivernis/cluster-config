@@ -1,13 +1,4 @@
 apiVersion: traefik.containo.us/v1alpha1
-kind: Middleware
-metadata:
-  name: prefix-dashboard-services
-  namespace: uptime-kuma
-spec:
-  addPrefix:
-    prefix: /status/public
----
-apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: uptime-kuma-route
@@ -16,7 +7,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`status.cluster.trivernis.dev`, `status.cluster.trivernis.net`)
+  - match: Host(`status.cluster.trivernis.dev`, `status.cluster.trivernis.net`, `status.trivernis.dev`, `status.trivernis.net`)
     kind: Rule
     middlewares:
       - name: strict-security-headers
@@ -24,12 +15,3 @@ spec:
     services:
     - name: uptime-kuma
       port: http 
-  - match: Host(`status.trivernis.dev`, `status.trivernis.net`)
-    kind: Rule
-    middlewares:
-      - name: strict-security-headers
-        namespace: default
-      - name: prefix-dashboard-services
-    services:
-    - name: uptime-kuma
-      port: http
