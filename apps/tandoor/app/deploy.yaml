@@ -154,7 +154,7 @@ spec:
           - name: ALLOWED_HOSTS
             value: "*"
           - name: CSRF_TRUSTED_ORIGINS
-            value: "https://recipes.trivernis.dev"
+            value: "https://recipes.trivernis.net"
           - name: SECRET_KEY
             valueFrom:
               secretKeyRef:
