@@ -22,6 +22,7 @@ spec:
     middlewares:
       - name: security-headers
         namespace: default
+      - name: tandoor-headers
     services:
     - name: tandoor
       port: 80
