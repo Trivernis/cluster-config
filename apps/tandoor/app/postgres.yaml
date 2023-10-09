@@ -13,7 +13,7 @@ spec:
         valueFrom:
            secretKeyRef:
               name: recipes-secret
-              key: postgresql-password
+              key: postgres-password
 
       - name: POSTGRES_REPLICATION_PASSWORD
         valueFrom:
