@@ -5,7 +5,7 @@ metadata:
   name: longhorn
 resources:
   - app/minio-sealedsecret.yaml
-  - app/release.yaml
+  # - app/release.yaml
   - app/crypto-sealedsecret.yaml
   - app/crypto-storageclass.yaml
   - app/hddcrypto-storageclass.yaml
