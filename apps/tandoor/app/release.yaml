@@ -1,0 +1,39 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: tandoor
+  namespace: tandoor
+spec:
+  releaseName: tandoor
+  chart:
+    spec:
+      chart: tandoor
+      sourceRef:
+        kind: HelmRepository
+        name: gabe565
+        namespace: repos
+  interval: 60m
+  install:
+    remediation:
+      retries: 3
+  values:
+    postgresql:
+      enabled: false
+    persistence:
+      media:
+        enabled: true
+        storageClass: longhorn-hdd-crypto-global
+        size: 2Gi
+    env:
+      TIMEZONE: Europe/Berlin
+      ALLOWED_HOSTS: '*'
+      CSRF_TRUSTED_ORIGINS: https://recipes.trivernis.dev
+      DB_ENGINE: django.db.backends.postgresql_psycopg2
+      POSTGRES_HOST: recipes-db
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+  valuesFrom:
+    - kind: Secret
+      name: recipes-secret
+      valuesKey: values

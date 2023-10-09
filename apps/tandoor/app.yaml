@@ -5,11 +5,7 @@ metadata:
   name: tandoor
 resources:
   - app/namespace.yaml
-  - app/service-account.yaml
   - app/recipes-sealedsecret.yaml
-  - app/config.yaml
-  - app/pvc.yaml
   - app/postgres.yaml
-  - app/deploy.yaml
-  - app/service.yaml
+  - app/release.yaml
   - app/route.yaml
