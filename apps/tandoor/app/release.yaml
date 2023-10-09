@@ -28,7 +28,7 @@ spec:
     env:
       TIMEZONE: Europe/Berlin
       ALLOWED_HOSTS: '*'
-      CSRF_TRUSTED_ORIGINS: https://recipes.trivernis.dev
+      CSRF_TRUSTED_ORIGINS: https://food.trivernis.net
       DB_ENGINE: django.db.backends.postgresql_psycopg2
       POSTGRES_HOST: recipes-db
       POSTGRES_PORT: 5432

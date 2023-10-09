@@ -17,7 +17,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`recipes.trivernis.dev`, `recipes.trivernis.net`) && PathPrefix(`/media`, `/static`)
+  - match: Host(`recipes.trivernis.dev`, `recipes.trivernis.net`, `food.trivernis.net`) && PathPrefix(`/media`, `/static`)
     kind: Rule
     middlewares:
       - name: security-headers
@@ -26,7 +26,7 @@ spec:
     services:
     - name: tandoor
       port: static
-  - match: Host(`recipes.trivernis.dev`, `recipes.trivernis.net`)
+  - match: Host(`recipes.trivernis.dev`, `recipes.trivernis.net`, `food.trivernis.net`)
     kind: Rule
     middlewares:
       - name: security-headers
