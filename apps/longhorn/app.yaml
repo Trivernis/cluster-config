@@ -10,5 +10,6 @@ resources:
   - app/crypto-storageclass.yaml
   - app/hddcrypto-storageclass.yaml
   - app/hdd-storageclass.yaml
+  - app/fast-storageclass.yaml
   - app/longhorn-sealedsecret.yaml
   - app/route.yaml
