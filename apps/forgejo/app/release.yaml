@@ -31,6 +31,9 @@ spec:
           ROOT_URL: https://git.trivernis.dev
       metrics:
         enabled: true
+    persistence:
+      enabled: true
+      storageClass: local-ssd
     memcached:
       enabled: true
     postgresql:
