@@ -22,7 +22,7 @@ spec:
     persistence:
       media:
         enabled: true
-        storageClass: longhorn-hdd-crypto-global
+        storageClass: local-hdd
         accessMode: ReadWriteOnce
         size: 2Gi
     env:
