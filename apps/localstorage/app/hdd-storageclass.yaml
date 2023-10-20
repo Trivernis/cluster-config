@@ -2,7 +2,7 @@ kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
   name: local-hdd
-provisioner: cluster.local/local-path-provisioner
+provisioner: rancher.io/local-path
 parameters:
   nodePath: /mnt/data/cluster-local-storage
 volumeBindingMode: WaitForFirstConsumer

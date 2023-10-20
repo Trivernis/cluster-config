@@ -4,7 +4,7 @@ metadata:
   name: local-ssd
   annotations:
     storageclass.kubernetes.io/is-default-class: "true"
-provisioner: cluster.local/local-path-provisioner
+provisioner: rancher.io/local-path
 parameters:
   nodePath: /var/cluster-local-storage
 volumeBindingMode: WaitForFirstConsumer
