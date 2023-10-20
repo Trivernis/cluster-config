@@ -1,0 +1,12 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: local-ssd
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+provisioner: cluster.local/local-path-provisioner
+parameters:
+  nodePath: /var/cluster-local-storage
+  fromBackup: ""
+volumeBindingMode: WaitForFirstConsumer
+reclaimPolicy: Delete

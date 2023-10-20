@@ -9,11 +9,11 @@ data:
       "nodePathMap":[
         {
           "node":"DEFAULT_PATH_FOR_NON_LISTED_NODES",
-          "paths":["/opt/local-path-provisioner"]
+          "paths":["/var/cluster-local-storage"]
         },
         {
           "node":"cluster-dedicated-1",
-          "paths":["/opt/local-path-provisioner", "/mnt/data/cluster-local-storage"]
+          "paths":["/var/cluster-local-storage", "/mnt/data/cluster-local-storage"]
         }
       ]
     }

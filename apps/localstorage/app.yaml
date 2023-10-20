@@ -6,3 +6,5 @@ metadata:
 resources:
   - app/config.yaml
   - app/deploy.yaml
+  - app/hdd-storageclass.yaml
+  - app/ssd-storageclass.yaml
