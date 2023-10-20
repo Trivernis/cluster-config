@@ -5,6 +5,5 @@ metadata:
 provisioner: cluster.local/local-path-provisioner
 parameters:
   nodePath: /mnt/data/cluster-local-storage
-  fromBackup: ""
 volumeBindingMode: WaitForFirstConsumer
 reclaimPolicy: Delete
