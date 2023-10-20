@@ -25,7 +25,7 @@ spec:
         storageSpec:
           volumeClaimTemplate:
               spec:
-                storageClassName: longhorn
+                storageClassName: local-ssd
                 accessModes: ["ReadWriteOnce"]
                 resources:
                   requests:
