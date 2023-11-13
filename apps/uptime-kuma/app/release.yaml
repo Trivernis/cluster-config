@@ -17,3 +17,6 @@ spec:
     remediation:
       retries: 3
   values:
+    volume:
+      storageClassName: ebs-ssd
+      
