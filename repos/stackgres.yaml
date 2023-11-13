@@ -5,4 +5,4 @@ metadata:
   namespace: repos
 spec:
   interval: 60m
-  url: https://stackgres.io/downloads/stackgres-k8s/stackgres/helm/
+  url: https://stackgres.io/downloads/stackgres-k8s
