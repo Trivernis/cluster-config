@@ -22,7 +22,7 @@ spec:
     persistence:
       media:
         enabled: true
-        storageClass: local-hdd
+        storageClass: ebs-hdd
         accessMode: ReadWriteOnce
         size: 2Gi
     env:
