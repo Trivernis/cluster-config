@@ -4,10 +4,10 @@ metadata:
   name: stackgres
   namespace: stackgres
 spec:
-  releaseName: stackgres
+  releaseName: stackgres-operator
   chart:
     spec:
-      chart: stackgres
+      chart: stackgres-operator
       sourceRef:
         kind: HelmRepository
         name: stackgres
