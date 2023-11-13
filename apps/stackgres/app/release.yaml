@@ -21,5 +21,11 @@ spec:
       secretRef:
         name: stackgres-secret
     cert:
+      createForOperator: true
+      createForWebApi: false
+      secretName: stackgres-secret
       certManager:
         autoConfigure: true
+    deploy:
+      restapi: false
+      operator: true
