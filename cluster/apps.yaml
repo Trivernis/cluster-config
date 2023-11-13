@@ -52,23 +52,6 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: apps-longhorn
-  namespace: flux-system
-spec:
-  dependsOn:
-    - name: repos
-  interval: 5m
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
-  path: ./apps/longhorn
-  prune: true
-  wait: false
-  timeout: 5m0s
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1
-kind: Kustomization
-metadata:
   name: apps-forgejo
   namespace: flux-system
 spec:
