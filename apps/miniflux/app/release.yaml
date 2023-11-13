@@ -19,6 +19,9 @@ spec:
   values:
     postgresql:
       enabled: false
+    persistence:
+      config:
+        storageClass: ebs-ssd
   valuesFrom:
     - kind: Secret
       name: miniflux-secret

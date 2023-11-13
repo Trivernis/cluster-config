@@ -57,7 +57,6 @@ metadata:
 spec:
   dependsOn:
     - name: repos
-    - name: apps-longhorn
   interval: 5m
   sourceRef:
     kind: GitRepository
@@ -75,7 +74,6 @@ metadata:
 spec:
   dependsOn:
     - name: repos
-    - name: apps-longhorn
   interval: 5m
   sourceRef:
     kind: GitRepository
@@ -93,7 +91,6 @@ metadata:
 spec:
   dependsOn:
     - name: repos
-    - name: apps-longhorn
   interval: 5m
   sourceRef:
     kind: GitRepository
@@ -145,7 +142,6 @@ metadata:
 spec:
   dependsOn:
     - name: repos
-    - name: apps-longhorn
   interval: 5m
   sourceRef:
     kind: GitRepository
@@ -163,7 +159,6 @@ metadata:
 spec:
   dependsOn:
     - name: repos
-    - name: apps-longhorn
   interval: 5m
   sourceRef:
     kind: GitRepository
