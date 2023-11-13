@@ -33,7 +33,7 @@ spec:
         enabled: true
     persistence:
       enabled: true
-      storageClass: local-hdd
+      storageClass: ebs-hdd
     memcached:
       enabled: true
     postgresql:
