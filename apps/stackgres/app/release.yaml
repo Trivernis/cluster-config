@@ -1,0 +1,22 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: stackgres
+  namespace: stackgres
+spec:
+  releaseName: stackgres
+  chart:
+    spec:
+      chart: stackgres
+      sourceRef:
+        kind: HelmRepository
+        name: stackgres
+        namespace: repos
+  interval: 60m
+  install:
+    remediation:
+      retries: 3
+  values:
+    authentication:
+      secretRef:
+        name: stackgres-secret
