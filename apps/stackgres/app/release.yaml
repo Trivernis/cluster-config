@@ -20,3 +20,6 @@ spec:
     authentication:
       secretRef:
         name: stackgres-secret
+    cert:
+      certManager:
+        autoConfigure: true
