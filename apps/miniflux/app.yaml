@@ -6,6 +6,6 @@ metadata:
 resources:
   - app/namespace.yaml
   - app/miniflux-sealedsecret.yaml
-  - app/stackgres.yaml
+  - app/postgres.yaml
   - app/release.yaml
   - app/route.yaml
