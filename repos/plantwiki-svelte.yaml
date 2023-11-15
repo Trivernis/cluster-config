@@ -6,3 +6,5 @@ metadata:
 spec:
   interval: 60m
   url: https://git.trivernis.net/Trivernis/plantwiki-svelte
+  ref:
+    branch: main
