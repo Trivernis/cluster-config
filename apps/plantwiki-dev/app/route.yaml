@@ -13,5 +13,5 @@ spec:
       - name: strict-security-headers
         namespace: default
     services:
-    - name: plantwiki
+    - name: plantwiki-dev
       port: http 
