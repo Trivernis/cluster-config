@@ -18,3 +18,5 @@ spec:
       retries: 3
   values:
     replicaCount: 2
+    plantwiki:
+      domain: plantwiki.trivernis.dev
