@@ -1,0 +1,20 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: plantwiki-dev
+  namespace: plantwiki-dev
+spec:
+  releaseName: plantwiki-dev
+  chart:
+    spec:
+      chart: chart
+      sourceRef:
+        kind: GitRepository
+        name: plantwiki-svelte
+        namespace: repos
+  interval: 60m
+  install:
+    remediation:
+      retries: 3
+  values:
+    replicaCount: 2

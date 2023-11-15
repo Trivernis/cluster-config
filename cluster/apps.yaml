@@ -120,6 +120,23 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
+  name: apps-plantwiki-dev
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: repos
+  interval: 5m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./apps/plantwiki-dev
+  prune: true
+  wait: true
+  timeout: 5m0s
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
   name: apps-searxng
   namespace: flux-system
 spec:

@@ -1,0 +1,17 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: plantwiki-dev-route
+  namespace: plantwiki-dev
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`plantwiki.trivernis.dev`)
+    kind: Rule
+    middlewares:
+      - name: strict-security-headers
+        namespace: default
+    services:
+    - name: plantwiki
+      port: http 

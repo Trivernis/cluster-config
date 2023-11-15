@@ -57,7 +57,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`plantwiki.trivernis.dev`, `plantwiki.trivernis.net`)
+  - match: Host(`plantwiki.trivernis.net`)
     kind: Rule
     middlewares:
       - name: strict-security-headers
