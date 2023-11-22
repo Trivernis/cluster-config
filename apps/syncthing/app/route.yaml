@@ -7,7 +7,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`syncthing.trivernis.net`)
+  - match: Host(`syncthing.trivernis.dev`, `syncthing.trivernis.net`)
     kind: Rule
     middlewares:
       - name: strict-security-headers
