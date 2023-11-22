@@ -1,0 +1,17 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: syncthing-route
+  namespace: syncthing
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`syncthing.trivernis.net`)
+    kind: Rule
+    middlewares:
+      - name: strict-security-headers
+        namespace: default
+    services:
+    - name: syncthing
+      port: http
