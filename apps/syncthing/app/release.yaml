@@ -38,8 +38,8 @@ spec:
             enabled: true
             port: 22000
             protocol: TCP
-            targetPort: 22000
-            nodePort: 22000
+            targetPort: 32200
+            nodePort: 32200
       discovery:
         enabled: true
         type: NodePort
@@ -49,5 +49,5 @@ spec:
             enabled: true
             port: 21027
             protocol: UDP
-            targetPort: 21027
-            nodePort: 21027
+            targetPort: 30027
+            nodePort: 30027
