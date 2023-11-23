@@ -33,7 +33,7 @@ spec:
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRouteUDP
 metadata:
-  name: syncthing-route-listen
+  name: syncthing-route-discovery
   namespace: syncthing
 spec:
   entryPoints:
