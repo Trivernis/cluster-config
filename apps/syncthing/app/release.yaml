@@ -29,11 +29,21 @@ spec:
         ports:
           http:
             port: 8384
-          listen:
-            port: 22000
-          discovery:
-            port: 21027
       listen:
-        enabled: false
+        enabled: true
+        type: ClusterIP
+        externalTrafficPolicy: null
+        ports:
+          listen:
+            protocol: TCP
+            port: 22000
+            
       discovery:
-        enabled: false
+        enabled: true
+        type: ClusterIP
+        externalTrafficPolicy: null
+        ports:
+          discovery:
+            protocol: UDP
+            port: 21027
+          

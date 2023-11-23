@@ -27,7 +27,7 @@ spec:
   routes:
   - match: HostSNI(`*`)
     services:
-    - name: syncthing
+    - name: syncthing-listen
       port: listen
 ---
 apiVersion: traefik.containo.us/v1alpha1
@@ -40,5 +40,5 @@ spec:
     - sct-discovery
   routes:
   - services:
-    - name: syncthing
+    - name: syncthing-discovery
       port: discovery
