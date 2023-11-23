@@ -19,3 +19,13 @@ spec:
         expose: true
         exposedPort: 8022
         protocol: TCP
+      sct-discovery:
+        port: 21027
+        expose: true
+        exposedPort: 21027
+        protocol: UDP
+      sct-listen:
+        port: 22000
+        expose: true
+        exposedPort: 22000
+        protocol: TCP

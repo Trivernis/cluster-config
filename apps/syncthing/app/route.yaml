@@ -15,3 +15,30 @@ spec:
     services:
     - name: syncthing
       port: http
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: syncthing-route-listen
+  namespace: syncthing
+spec:
+  entryPoints:
+    - sct-listen
+  routes:
+  - match: HostSNI(`*`)
+    services:
+    - name: syncthing
+      port: listen
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteUDP
+metadata:
+  name: syncthing-route-listen
+  namespace: syncthing
+spec:
+  entryPoints:
+    - sct-discovery
+  routes:
+  - services:
+    - name: syncthing
+      port: discovery

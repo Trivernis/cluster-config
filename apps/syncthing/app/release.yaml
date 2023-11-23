@@ -29,25 +29,11 @@ spec:
         ports:
           http:
             port: 8384
-      listen:
-        enabled: true
-        type: NodePort
-        externalTrafficPolicy: Local
-        ports:
           listen:
-            enabled: true
             port: 22000
-            protocol: TCP
-            targetPort: 32200
-            nodePort: 32200
-      discovery:
-        enabled: true
-        type: NodePort
-        externalTrafficPolicy: Local
-        ports:
           discovery:
-            enabled: true
             port: 21027
-            protocol: UDP
-            targetPort: 30027
-            nodePort: 30027
+      listen:
+        enabled: false
+      discovery:
+        enabled: false
