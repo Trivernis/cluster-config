@@ -33,6 +33,8 @@ spec:
           $CONFIG = array (
           );
 
+    nginx:
+      enabled: true
     redis:
       enabled: true
     cronjob:
