@@ -7,7 +7,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`cloud.trivernis.net`)
+  - match: Host(`cloud.trivernis.net`, `nextcloud.trivernis.dev`)
     kind: Rule
     middlewares:
       - name: strict-security-headers
