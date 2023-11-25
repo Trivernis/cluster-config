@@ -18,10 +18,10 @@ spec:
       retries: 3
   values:
     image:
-      flavor: fpm
+      flavor: fpm-alpine
 
     nextcloud:
-      host: nextcloud.trivernis.dev
+      host: cloud.trivernis.net
       existingSecret:
         enabled: true
         secretName: nextcloud-secret
