@@ -21,7 +21,7 @@ spec:
       flavor: fpm
 
     nextcloud:
-      host: cloud.trivernis.net
+      host: nextcloud.trivernis.dev
       existingSecret:
         enabled: true
         secretName: nextcloud-secret
