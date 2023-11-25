@@ -31,6 +31,8 @@ spec:
         overrides.config.php: |-
           <?php
           $CONFIG = array (
+            'overwritehost' => 'cloud.trivernis.net',
+            'overwriteprotocol' => 'https',
           );
 
     nginx:
