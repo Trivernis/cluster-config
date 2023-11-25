@@ -1,0 +1,57 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: nextcloud
+  namespace: nextcloud
+spec:
+  releaseName: nextcloud
+  chart:
+    spec:
+      chart: nextcloud
+      sourceRef:
+        kind: HelmRepository
+        name: nextcloud
+        namespace: repos
+  interval: 60m
+  install:
+    remediation:
+      retries: 3
+  values:
+    image:
+      flavor: fpm
+
+    nextcloud:
+      host: cloud.trivernis.net
+      existingSecret:
+        enabled: true
+        secretName: nextcloud-secret
+        usernameKey: username
+        passwordKey: password
+      configs:
+        overrides.config.php: |-
+          <?php
+          $CONFIG = array (
+          );
+
+    redis:
+      enabled: true
+    cronjob:
+      enabled: true
+
+    internalDatabase:
+      enabled: false
+    externalDatabase:
+      enabled: true
+      type: postgres
+      existingSecret:
+        enabled: true
+        secretName: nextcloud-db-secret
+        usernameKey: username
+        passwordKey: password
+        hostKey: host
+        databaseKey: database
+
+    persistence:
+      enabled: true
+      storageClass: ebs-hdd
+      size: 200Gi
