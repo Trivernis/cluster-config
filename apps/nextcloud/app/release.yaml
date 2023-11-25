@@ -44,7 +44,7 @@ spec:
       enabled: false
     externalDatabase:
       enabled: true
-      type: postgres
+      type: postgresql
       existingSecret:
         enabled: true
         secretName: nextcloud-db-secret
