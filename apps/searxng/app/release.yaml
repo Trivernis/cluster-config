@@ -43,7 +43,8 @@ spec:
             limits:
               memory: 128Mi
     searxng:
-      config: |-
+      config:
+        use_default_settings: true
         general:
           # Debug mode, only for development. Is overwritten by ${SEARXNG_DEBUG}
           debug: false
