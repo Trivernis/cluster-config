@@ -27,6 +27,9 @@ spec:
       limits:
         memory: 2Gi
 
+    controller:
+      replicas: 2
+
     redis:
       enabled: true
       resources:
