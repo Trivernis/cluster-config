@@ -17,6 +17,11 @@ spec:
     remediation:
       retries: 3
   values:
+    resources:
+      requests:
+        memory: 256Mi
+      limits:
+        memory: 1Gi
     gitea:
       admin:
         existingSecret: forgejo-admin-secret
