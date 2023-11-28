@@ -4,7 +4,7 @@ metadata:
   name: searxng
   namespace: searxng
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: searxng
@@ -23,6 +23,11 @@ spec:
       containers:
         - image: docker.io/searxng/searxng:latest
           name: searxng
+          resources:
+            requests:
+              memory: 256Mi
+            limits:
+              memory: 512Mi
           env:
             - name: SEARXNG_BASE_URL
               value: https://search.trivernis.net
