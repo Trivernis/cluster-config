@@ -20,6 +20,12 @@ spec:
     image:
       flavor: fpm-alpine
 
+    resources:
+      requests:
+        memory: 250Mi
+      limits:
+        memory: 1Gi
+
     nextcloud:
       host: cloud.trivernis.net
       existingSecret:
@@ -27,11 +33,6 @@ spec:
         secretName: nextcloud-secret
         usernameKey: username
         passwordKey: password
-      resources:
-        requests:
-          memory: 250Mi
-        limits:
-          memory: 1Gi
       configs:
         overrides.config.php: |-
           <?php
