@@ -10,8 +10,8 @@ spec:
   - match: Host(`search.trivernis.dev`, `search.trivernis.net`)
     kind: Rule
     services:
-    - name: searxng-srv
-      port: 8080
+    - name: searxng
+      port: http 
     middlewares:
       - name: strict-security-headers
         namespace: default
