@@ -636,12 +636,6 @@ spec:
             engine: duckduckgo
             shortcut: ddg
 
-          - name: duckduckgo images
-            engine: duckduckgo_images
-            shortcut: ddi
-            timeout: 3.0
-            disabled: true
-
           - name: duckduckgo weather
             engine: duckduckgo_weather
             shortcut: ddw
