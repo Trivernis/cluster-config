@@ -5,7 +5,5 @@ metadata:
   name: searxng
 resources:
   - app/namespace.yaml
-  # - app/config.yaml
-  # - app/deploy.yaml
   - app/release.yaml
   - app/route.yaml
