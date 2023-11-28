@@ -141,11 +141,6 @@ spec:
             X-Robots-Tag: noindex, nofollow
             Referrer-Policy: no-referrer
 
-        redis:
-          # URL to connect redis database. Is overwritten by ${SEARXNG_REDIS_URL}.
-          # https://redis-py.readthedocs.io/en/stable/connections.html#redis.client.Redis.from_url
-          url: redis://redis-srv:6379
-
         ui:
           # Custom static path - leave it blank if you didn't change
           static_path: ""
