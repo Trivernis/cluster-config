@@ -27,6 +27,11 @@ spec:
         secretName: nextcloud-secret
         usernameKey: username
         passwordKey: password
+      resources:
+        requests:
+          memory: 250Mi
+        limits:
+          memory: 1Gi
       configs:
         overrides.config.php: |-
           <?php
@@ -37,10 +42,25 @@ spec:
 
     nginx:
       enabled: true
+      resources:
+        requests:
+          memory: 64Mi
+        limits:
+          memory: 250Mi
     redis:
       enabled: true
+      resources:
+        requests:
+          memory: 64Mi
+        limits:
+          memory: 128Mi
     cronjob:
       enabled: true
+      resources:
+        requests:
+          memory: 64Mi
+        limits:
+          memory: 250Mi
 
     internalDatabase:
       enabled: false
