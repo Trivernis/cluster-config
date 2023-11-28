@@ -1319,10 +1319,6 @@ spec:
             engine: sepiasearch
             shortcut: sep
 
-          - name: soundcloud
-            engine: soundcloud
-            shortcut: sc
-
           - name: stackoverflow
             engine: stackexchange
             shortcut: st
