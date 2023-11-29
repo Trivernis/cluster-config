@@ -18,6 +18,11 @@ spec:
       retries: 3
   values:
     namespaceOverride: metrics
+    resources:
+      requests:
+        memory: 512Mi
+      limits:
+        memory: 1Gi
     prometheus:
       monitor:
         interval: 10s

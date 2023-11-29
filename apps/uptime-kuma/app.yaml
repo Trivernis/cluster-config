@@ -3,6 +3,11 @@ kind: Kustomization
 namespace: kube-system
 metadata:
   name: uptime-kuma
+patches:
+  - patch: |-
+      - op: replace
+        path: spec/values/image/tag
+        value: 1.23.7-debian
 resources:
   - app/namespace.yaml
   - app/release.yaml
