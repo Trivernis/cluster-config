@@ -8,6 +8,7 @@ spec:
   chart:
     spec:
       chart: uptime-kuma
+      version: 2.15.0
       sourceRef:
         kind: HelmRepository
         name: irsigler
@@ -24,4 +25,5 @@ spec:
         memory: 256Mi
       limits:
         memory: 512Mi
+      tag: 1.23.7-debian
       
