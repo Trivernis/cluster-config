@@ -25,5 +25,6 @@ spec:
         memory: 256Mi
       limits:
         memory: 512Mi
+    image:
       tag: 1.23.7-debian
       
