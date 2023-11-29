@@ -5,12 +5,12 @@ metadata:
   name: uptime-kuma
 patches:
   - patch: |-
-      - op: replace
-        path: spec/values/image/tag
+      - op: add
+        path: /spec/values/image/tag
         value: 1.23.7-debian
   - patch: |-
-      - op: replace
-        path: spec/chart/spec/version
+      - op: add
+        path: /spec/chart/spec/version
         value: 1.3.3
 resources:
   - app/namespace.yaml
