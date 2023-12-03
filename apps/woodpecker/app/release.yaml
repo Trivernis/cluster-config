@@ -27,6 +27,7 @@ spec:
     server:
       env:
         WOODPECKER_HOST: "https://ci.trivernis.dev"
+        WOODPECKER_OPEN: true
     agent:
       env:
         WOODPECKER_BACKEND_K8S_STORAGE-CLASS: "ebs-ssd"
