@@ -7,11 +7,11 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`ci.cluster.trivernis.dev`)
+  - match: Host(`ci.trivernis.dev`)
     kind: Rule
     middlewares:
       - name: strict-security-headers
         namespace: default
     services:
-    - name: woodpecker
+    - name: woodpecker-server
       port: http 
