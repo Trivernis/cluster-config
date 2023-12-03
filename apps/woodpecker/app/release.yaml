@@ -31,4 +31,6 @@ spec:
     agent:
       env:
         WOODPECKER_BACKEND_K8S_STORAGE-CLASS: "ebs-ssd"
+        WOODPECKER_BACKEND_K8S_STORAGE_RWX: false
+
       
