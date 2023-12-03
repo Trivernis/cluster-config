@@ -1,0 +1,17 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: woodpecker-route
+  namespace: woodpecker
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`ci.cluster.trivernis.dev`)
+    kind: Rule
+    middlewares:
+      - name: strict-security-headers
+        namespace: default
+    services:
+    - name: woodpecker
+      port: http 

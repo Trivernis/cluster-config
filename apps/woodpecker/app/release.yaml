@@ -1,0 +1,30 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: woodpecker
+  namespace: woodpecker
+spec:
+  releaseName: woodpecker
+  chart:
+    spec:
+      chart: woodpecker
+      sourceRef:
+        kind: HelmRepository
+        name: woodpeckerci
+        namespace: repos
+  interval: 60m
+  install:
+    remediation:
+      retries: 3
+  values:
+    volume:
+      storageClassName: ebs-ssd
+    resources:
+      requests:
+        memory: 256Mi
+      limits:
+        memory: 512Mi
+    agent:
+      env:
+        WOODPECKER_BACKEND_K8S_STORAGE-CLASS: "ebs-ssd"
+      
