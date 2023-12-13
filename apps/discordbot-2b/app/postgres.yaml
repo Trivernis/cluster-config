@@ -1,0 +1,22 @@
+apiVersion: kubegres.reactive-tech.io/v1
+kind: Kubegres
+metadata:
+  name: 2b-db
+  namespace: discordbot-2b
+spec:
+   replicas: 1
+   image: postgres:16-alpine
+   database:
+      size: 2Gi
+   env:
+      - name: POSTGRES_PASSWORD
+        valueFrom:
+           secretKeyRef:
+              name: 2b-secret
+              key: postgres-password
+
+      - name: POSTGRES_REPLICATION_PASSWORD
+        valueFrom:
+           secretKeyRef:
+              name: 2b-secret
+              key: replication-password

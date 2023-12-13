@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: discordbot-2b
+  namespace: discordbot-2b
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: discordbot-2b
+  template:
+    metadata:
+      labels:
+        app: discordbot-2b
+    spec:
+      containers:
+      - image: git.trivernis.net/trivernis/2b-rs:0.11.2
+        name: 2b-rs
+        env:
+        - name: BOT_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: 2b-secret
+              key: bot-token
+        - name: BOT_PREFIX
+          valueFrom:
+            secretKeyRef:
+              name: 2b-secret
+              key: bot-prefix
+        - name: BOT_OWNER
+          valueFrom:
+            secretKeyRef:
+              name: 2b-secret
+              key: bot-owner
+        - name: DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: 2b-secret
+              key: database-url
+        - name: SPOTIFY_CLIENT_ID
+          valueFrom:
+            secretKeyRef:
+              name: 2b-secret
+              key: spotify-client-id
+        - name: SPOTIFY_CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: 2b-secret
+              key: spotify-client-secret
+        - name: SAUCENAO_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: 2b-secret
+              key: saucenao-api-key
