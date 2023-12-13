@@ -14,7 +14,7 @@ spec:
         app: discordbot-2b
     spec:
       containers:
-      - image: git.trivernis.net/trivernis/2b-rs:0.11.2
+      - image: git.trivernis.net/trivernis/2b-rs:0.11.3
         name: 2b-rs
         env:
         - name: BOT_TOKEN
