@@ -1,7 +1,7 @@
 apiVersion: kubegres.reactive-tech.io/v1
 kind: Kubegres
 metadata:
-  name: 2b-db
+  name: bot-db
   namespace: discordbot-2b
 spec:
    replicas: 1
