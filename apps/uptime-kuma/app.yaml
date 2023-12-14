@@ -6,4 +6,5 @@ metadata:
 resources:
   - app/namespace.yaml
   - app/release.yaml
+  - app/sealedsecret.yaml
   - app/route.yaml

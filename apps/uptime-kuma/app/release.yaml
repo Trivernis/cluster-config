@@ -31,3 +31,7 @@ spec:
     serviceMonitor:
       enabled: true
       
+  valuesFrom:
+    - kind: Secret
+      name: uptime-kuma-secret
+      valuesKey: values
