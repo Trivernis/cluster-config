@@ -4,14 +4,18 @@ metadata:
   namespace: discordbot-2b
   name: cluster-scripts
 spec:
+  continueOnError: true
   scripts:
   - name: init-db
+    version: 1
     scriptFrom:
       secretKeyRef:
         name: 2b-secret
         key: init-db.sql
+
   - name: init-user
     retryOnError: true
+    version: 2
     scriptFrom:
       secretKeyRef:
         name: 2b-secret
