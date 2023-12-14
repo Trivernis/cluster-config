@@ -18,7 +18,7 @@ spec:
         name: 2b-rs
         env:
         - name: RUST_LOG
-          value: DEBUG
+          value: DEBUG,serenity=ERROR,hyper=ERROR
         - name: BOT_TOKEN
           valueFrom:
             secretKeyRef:
