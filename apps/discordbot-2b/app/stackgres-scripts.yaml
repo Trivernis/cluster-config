@@ -6,17 +6,22 @@ metadata:
 spec:
   continueOnError: true
   scripts:
-  - name: init-db
-    version: 1
-    scriptFrom:
-      secretKeyRef:
-        name: 2b-secret
-        key: init-db.sql
-
-  - name: init-user
+  - name: create-user
     retryOnError: true
-    version: 2
+    version: 3
     scriptFrom:
       secretKeyRef:
         name: 2b-secret
-        key: init-user.sql
+        key: create-user.sql
+  - name: create-db
+    version: 1
+    script: |
+      CREATE DATABASE discordbot;
+  - name: grant-permissions
+    retryOnError: true
+    version: 1
+    script: |
+      GRANT ALL ON DATABASE discordbot TO bot;
+      ALTER DATABASE discordbot OWNER TO bot;
+      GRANT USAGE, CREATE ON SCHEMA public TO bot;
+
