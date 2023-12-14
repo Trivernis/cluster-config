@@ -7,3 +7,4 @@ resources:
   - app/namespace.yaml
   - app/release.yaml
   - app/route.yaml
+  - app/sgprofile.yaml
