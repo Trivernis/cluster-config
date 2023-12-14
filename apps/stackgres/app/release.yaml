@@ -20,3 +20,4 @@ spec:
     adminui:
       service:
         type: ClusterIP
+        exposeHTTP: true
