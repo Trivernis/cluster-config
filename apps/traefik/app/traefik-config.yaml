@@ -7,6 +7,7 @@ spec:
   valuesContent: |-
     additionalArguments:
       - "--providers.kubernetescrd.allowCrossNamespace=true"
+      - "--metrics.prometheus=true"
     ports:
       web:
         exposedPort: 8000
