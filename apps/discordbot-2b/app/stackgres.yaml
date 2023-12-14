@@ -1,4 +1,17 @@
 apiVersion: stackgres.io/v1
+kind: SGScript
+metadata:
+  namespace: discordbot-2b
+  name: cluster-scripts
+spec:
+  scripts:
+  - name: init
+    scriptFrom:
+      secretKeyRef:
+        name: 2b-secret
+        key: init.sql
+---
+apiVersion: stackgres.io/v1
 kind: SGCluster
 metadata:
   namespace: discordbot-2b
@@ -7,7 +20,10 @@ spec:
   postgres:
     version: '16'
   instances: 2
-  sgInstanceProfile: 'size-small'
   pods:
     persistentVolume:
-      size: '10Gi'
+      size: '2Gi'
+      storageClass: ebs-ssd
+  managedSql:
+    scripts:
+    - sgScript: cluster-scripts
