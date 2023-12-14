@@ -28,6 +28,9 @@ spec:
           memory: 256Mi
         limits:
           memory: 512Mi
+      prometheus:
+        podmonitor:
+          enabled: true
     agent:
       env:
         WOODPECKER_BACKEND_K8S_STORAGE-CLASS: "ebs-ssd"
