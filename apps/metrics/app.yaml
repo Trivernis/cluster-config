@@ -8,3 +8,4 @@ resources:
   - app/metrics-sealedsecret.yaml
   - app/release.yaml
   - app/route.yaml
+  - app/monitor.yaml
