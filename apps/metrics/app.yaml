@@ -9,4 +9,3 @@ resources:
   - app/release.yaml
   - app/prometheus.yaml
   - app/route.yaml
-  - app/monitor.yaml
