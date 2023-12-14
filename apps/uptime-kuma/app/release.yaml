@@ -27,4 +27,7 @@ spec:
         memory: 512Mi
     image:
       tag: 1.23.10-debian
+
+    serviceMonitor:
+      enabled: true
       
