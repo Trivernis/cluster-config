@@ -1,0 +1,17 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: stackgres-ui-route
+  namespace: stackgres
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`stackgres.trivernis.dev`)
+    kind: Rule
+    middlewares:
+      - name: strict-security-headers
+        namespace: default
+    services:
+    - name: stackgres-restapi
+      port: http
