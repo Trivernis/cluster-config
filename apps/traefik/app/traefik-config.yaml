@@ -7,7 +7,6 @@ spec:
   valuesContent: |-
     additionalArguments:
       - "--providers.kubernetescrd.allowCrossNamespace=true"
-      - "--metrics.prometheus=true"
     ports:
       web:
         exposedPort: 8000
@@ -46,3 +45,11 @@ spec:
         expose: true
         exposedPort: 22000
         protocol: TCP
+    metrics:
+      prometheus:
+        service:
+          enabled: true
+        serviceMonitor:
+          jobLabel: traefik
+          interval: 30s
+
