@@ -14,9 +14,11 @@ spec:
         app: discordbot-2b
     spec:
       containers:
-      - image: git.trivernis.net/trivernis/2b-rs:0.11.3
+      - image: git.trivernis.net/trivernis/2b-rs:0.11.4
         name: 2b-rs
         env:
+        - name: RUST_LOG
+          value: DEBUG
         - name: BOT_TOKEN
           valueFrom:
             secretKeyRef:
