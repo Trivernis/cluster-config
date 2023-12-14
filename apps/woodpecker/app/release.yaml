@@ -28,6 +28,8 @@ spec:
           memory: 256Mi
         limits:
           memory: 512Mi
+      metrics:
+        enabled: true
       prometheus:
         podmonitor:
           enabled: true
