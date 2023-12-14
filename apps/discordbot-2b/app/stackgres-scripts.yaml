@@ -11,6 +11,7 @@ spec:
         name: 2b-secret
         key: init-db.sql
   - name: init-user
+    retryOnError: true
     scriptFrom:
       secretKeyRef:
         name: 2b-secret
