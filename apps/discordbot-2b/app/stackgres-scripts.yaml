@@ -5,8 +5,13 @@ metadata:
   name: cluster-scripts
 spec:
   scripts:
-  - name: init
+  - name: init-db
     scriptFrom:
       secretKeyRef:
         name: 2b-secret
-        key: init.sql
+        key: init-db.sql
+  - name: init-user
+    scriptFrom:
+      secretKeyRef:
+        name: 2b-secret
+        key: init-user.sql
