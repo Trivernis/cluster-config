@@ -11,6 +11,7 @@ spec:
     persistentVolume:
       size: '2Gi'
       storageClass: ebs-ssd
+  prometheusAutobind: true
   managedSql:
     scripts:
     - sgScript: cluster-scripts
