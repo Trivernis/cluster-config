@@ -30,7 +30,7 @@ spec:
         storageSpec:
           volumeClaimTemplate:
               spec:
-                storageClassName: local-ssd
+                storageClassName: ebs-ssd
                 accessModes: ["ReadWriteOnce"]
                 resources:
                   requests:
