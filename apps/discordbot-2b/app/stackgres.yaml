@@ -1,0 +1,13 @@
+apiVersion: stackgres.io/v1
+kind: SGCluster
+metadata:
+  namespace: discordbot-2b
+  name: cluster
+spec:
+  postgres:
+    version: '16'
+  instances: 2
+  sgInstanceProfile: 'size-small'
+  pods:
+    persistentVolume:
+      size: '10Gi'

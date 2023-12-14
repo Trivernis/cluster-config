@@ -6,5 +6,5 @@ metadata:
 resources:
   - app/namespace.yaml
   - app/sealedsecret.yaml
-  - app/postgres.yaml
+  - app/stackgres.yaml
   - app/deploy.yaml
