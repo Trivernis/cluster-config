@@ -1,7 +1,7 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: forgejo-route-http
+  name: http
   namespace: forgejo
 spec:
   entryPoints:
@@ -19,7 +19,7 @@ spec:
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRouteTCP
 metadata:
-  name: forgejo-route-ssh
+  name: ssh
   namespace: forgejo
 spec:
   entryPoints:
