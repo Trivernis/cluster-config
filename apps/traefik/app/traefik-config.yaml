@@ -47,6 +47,14 @@ spec:
         protocol: TCP
     metrics:
       prometheus:
+        headerLabels:
+          host: Host
+          useragent: User-Agent
+          origin: Origin
+          referer: Referer
+          forwarded-for: X-Forwarded-For
+          forwarded-host: X-Forwarded-Host
+          forwarded-proto: X-Forwarded-Proto
         addRoutersLabels: true
         service:
           enabled: true
