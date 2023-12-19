@@ -48,7 +48,6 @@ spec:
     metrics:
       prometheus:
         headerLabels:
-          host: Host
           useragent: User-Agent
           origin: Origin
           referer: Referer
