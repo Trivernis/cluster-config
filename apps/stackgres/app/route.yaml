@@ -1,7 +1,7 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: stackgres-ui-route
+  name: web
   namespace: stackgres
 spec:
   entryPoints:
