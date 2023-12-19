@@ -1,7 +1,7 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: weave-route
+  name: http
   namespace: flux-system
 spec:
   entryPoints:
