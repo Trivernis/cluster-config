@@ -1,7 +1,7 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: flux-webhook-route
+  name: webhook
   namespace: flux-system
 spec:
   entryPoints:
