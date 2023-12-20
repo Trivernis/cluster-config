@@ -6,10 +6,10 @@ metadata:
 spec:
   postgres:
     version: '15'
-  instances: 2
+  instances: 1
   pods:
     persistentVolume:
-      size: '2Gi'
+      size: '50Gi'
       storageClass: ebs-ssd
   prometheusAutobind: true
   managedSql:
