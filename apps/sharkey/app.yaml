@@ -10,5 +10,6 @@ resources:
   - app/config.yaml
   - app/volume.yaml
   - app/stackgres-scripts.yaml
+  - app/stackgres-pooling.yaml
   - app/stackgres.yaml
   - app/deploy.yaml

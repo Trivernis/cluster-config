@@ -1,0 +1,12 @@
+apiVersion: stackgres.io/v1
+kind: SGPoolingConfig
+metadata:
+  name: pgbouncerconf
+  namespace: sharkey
+spec:
+  pgBouncer:
+    pgbouncer.ini:
+      pgbouncer:
+        max_client_conn: '2000'
+        default_pool_size: '50'
+        ignore_startup_parameters: statement_timeout

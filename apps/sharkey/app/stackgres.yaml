@@ -12,6 +12,8 @@ spec:
       size: '50Gi'
       storageClass: ebs-ssd
   prometheusAutobind: true
+  configurations:
+    sgPoolingConfig: pgbouncerconf
   managedSql:
     scripts:
     - sgScript: cluster-scripts
