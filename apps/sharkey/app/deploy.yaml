@@ -13,6 +13,20 @@ spec:
       labels:
         app: sharkey
     spec:
+      initContainers:
+      - name: init-config
+        image: busybox
+        volumeMounts:
+        - name: sharkey-config
+          mountPath: "/sharkey/.config"
+          readOnly: false
+        - name: config-secret
+          mountPath: "/config-secret"
+          readOnly: true
+        - name: config
+          mountPath: "/config"
+          readOnly: true
+        command: ['sh', '-c', 'mkdir -p /sharkey/.config; cp /config-secret/*.yml /sharkey/.config/; cp /configt/*.yml /sharkey/.config/;']
       containers:
       - name: redis
         image: redis
@@ -23,14 +37,11 @@ spec:
       - image: ghcr.io/transfem-org/sharkey:stable
         name: sharkey
         volumeMounts:
-        - name: config-secret
-          mountPath: "/sharkey/.config"
-          readOnly: true
-        - name: config
-          mountPath: "/sharkey/.config"
-          readOnly: true
         - name: sharkey-files
           mountPath: "/sharkey/files"
+        - name: sharkey-config
+          mountPath: "/sharkey/.config"
+          readOnly: true
         env:
         - name: example
           valueFrom:
@@ -50,4 +61,7 @@ spec:
             path: "default.yml"
       - name: sharkey-files
         persistentVolumeClaim:
-          claimName: sharkey-files
+          claimName: sharkey-files-pvc
+      - name: sharkey-config
+        persistentVolumeClaim:
+          claimName: sharkey-config-pvc

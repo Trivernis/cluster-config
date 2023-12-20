@@ -4,7 +4,7 @@ metadata:
   name: sharkey-config
   namespace: sharkey
 data:
-  default.yaml: |
+  default.yml: |
     #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     # Misskey configuration
     #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
