@@ -9,7 +9,7 @@ spec:
     port: 3000
     protocol: TCP
     targetPort: http
-    selector:
-      app: sharkey
-    type: ClusterIP
+  selector:
+    app: sharkey
+  type: ClusterIP
   
