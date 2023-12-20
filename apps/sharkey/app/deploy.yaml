@@ -38,8 +38,6 @@ spec:
         - name: sharkey-config
           mountPath: "/sharkey/.config"
           readOnly: true
-      - name: redis
-        image: redis
         ports:
           - containerPort: 3000
             name: http 
