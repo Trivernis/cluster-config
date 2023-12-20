@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: sharkey
   namespace: sharkey
+  labels:
+    app: sharkey
 spec:
   replicas: 1
   selector:
@@ -36,6 +38,12 @@ spec:
         - name: sharkey-config
           mountPath: "/sharkey/.config"
           readOnly: true
+      - name: redis
+        image: redis
+        ports:
+          - containerPort: 3000
+            name: http 
+            protocol: TCP    
       - name: redis
         image: redis
         ports:
