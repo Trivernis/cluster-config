@@ -5,7 +5,7 @@ metadata:
   name: cluster
 spec:
   postgres:
-    version: '16'
+    version: '15'
   instances: 2
   pods:
     persistentVolume:
