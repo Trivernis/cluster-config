@@ -1,0 +1,17 @@
+apiVersion: stackgres.io/v1
+kind: SGCluster
+metadata:
+  namespace: sharkey
+  name: cluster
+spec:
+  postgres:
+    version: '16'
+  instances: 2
+  pods:
+    persistentVolume:
+      size: '2Gi'
+      storageClass: ebs-ssd
+  prometheusAutobind: true
+  managedSql:
+    scripts:
+    - sgScript: cluster-scripts

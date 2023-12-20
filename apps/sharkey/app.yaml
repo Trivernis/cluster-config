@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: discordbot-2b
+metadata:
+  name: discordbot-2b
+resources:
+  - app/namespace.yaml
+  - app/sealedsecret.yaml
+  - app/config-sealedsecret.yaml
+  - app/config.yaml
+  - app/volume.yaml
+  - app/stackgres-scripts.yaml
+  - app/stackgres.yaml
+  - app/deploy.yaml

@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sharkey
+  namespace: sharkey
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sharkey
+  template:
+    metadata:
+      labels:
+        app: sharkey
+    spec:
+      containers:
+      - name: redis
+        image: redis
+        ports:
+          - containerPort: 6379
+            name: redis
+            protocol: TCP    
+      - image: ghcr.io/transfem-org/sharkey:stable
+        name: sharkey
+        volumeMounts:
+        - name: config-secret
+          mountPath: "/sharkey/.config"
+          readOnly: true
+        - name: config
+          mountPath: "/sharkey/.config"
+          readOnly: true
+        - name: sharkey-files
+          mountPath: "/sharkey/files"
+        env:
+        - name: example
+          valueFrom:
+            secretKeyRef:
+              name: example-secret
+              key: example
+      volumes:
+      - name: config-secret
+        secret:
+          secretName: sharkey-config-secret
+          optional: false
+      - name: config
+        configMap:
+          name: sharkey-config
+          items:
+          - key: "default.yml"
+            path: "default.yml"
+      - name: sharkey-files
+        persistentVolumeClaim:
+          claimName: sharkey-files

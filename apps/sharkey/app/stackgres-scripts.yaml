@@ -1,0 +1,27 @@
+apiVersion: stackgres.io/v1
+kind: SGScript
+metadata:
+  namespace: sharkey
+  name: cluster-scripts
+spec:
+  continueOnError: true
+  scripts:
+  - name: create-user
+    retryOnError: true
+    version: 1
+    scriptFrom:
+      secretKeyRef:
+        name: sharkey-secret
+        key: create-user.sql
+  - name: create-db
+    version: 1
+    script: |
+      CREATE DATABASE sharkey;
+  - name: grant-permissions
+    retryOnError: true
+    version: 1
+    script: |
+      GRANT ALL ON DATABASE sharkey TO sharkey;
+      ALTER DATABASE sharkey OWNER TO sharkey;
+      GRANT USAGE, CREATE ON SCHEMA public TO sharkey;
+
