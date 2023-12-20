@@ -26,14 +26,8 @@ spec:
         - name: config
           mountPath: "/config"
           readOnly: true
-        command: ['sh', '-c', 'mkdir -p /sharkey/.config; cp /config-secret/*.yml /sharkey/.config/; cp /configt/*.yml /sharkey/.config/;']
+        command: ['sh', '-c', 'cat /config/default.yml > /sharkey/.config/default.yml; cat /config-secret/secret.yml >> /sharkey/.config/default.yml;']
       containers:
-      - name: redis
-        image: redis
-        ports:
-          - containerPort: 6379
-            name: redis
-            protocol: TCP    
       - image: ghcr.io/transfem-org/sharkey:stable
         name: sharkey
         volumeMounts:
@@ -42,12 +36,12 @@ spec:
         - name: sharkey-config
           mountPath: "/sharkey/.config"
           readOnly: true
-        env:
-        - name: example
-          valueFrom:
-            secretKeyRef:
-              name: example-secret
-              key: example
+      - name: redis
+        image: redis
+        ports:
+          - containerPort: 6379
+            name: redis
+            protocol: TCP    
       volumes:
       - name: config-secret
         secret:
