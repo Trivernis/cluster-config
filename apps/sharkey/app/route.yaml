@@ -7,7 +7,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`sharkey.trivernis.dev`)
+  - match: Host(`social.funkyfish.cool`)
     kind: Rule
     middlewares:
       - name: strict-security-headers

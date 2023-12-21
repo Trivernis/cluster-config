@@ -13,7 +13,7 @@ data:
     #───┘ URL └─────────────────────────────────────────────────────
 
     # Final accessible URL seen by a user.
-    url: https://sharkey.trivernis.dev
+    url: https://social.funkyfish.cool
 
     # ONCE YOU HAVE STARTED THE INSTANCE, DO NOT CHANGE THE
     # URL SETTINGS AFTER THAT!
