@@ -24,4 +24,5 @@ spec:
       GRANT ALL ON DATABASE sharkey TO sharkey;
       ALTER DATABASE sharkey OWNER TO sharkey;
       GRANT USAGE, CREATE ON SCHEMA public TO sharkey;
+      GRANT USAGE ON SCHEMA information_schema TO sharkey;
 

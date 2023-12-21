@@ -44,6 +44,9 @@ spec:
             protocol: TCP    
       - name: redis
         image: redis
+        volumeMounts:
+        - name: sharkey-redis
+          mountPath: "/data"
         ports:
           - containerPort: 6379
             name: redis
@@ -62,6 +65,9 @@ spec:
       - name: sharkey-files
         persistentVolumeClaim:
           claimName: sharkey-files-pvc
+      - name: sharkey-redis
+        persistentVolumeClaim:
+          claimName: sharkey-redis-pvc
       - name: sharkey-config
         persistentVolumeClaim:
           claimName: sharkey-config-pvc

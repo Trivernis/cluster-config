@@ -23,3 +23,16 @@ spec:
   resources:
     requests:
       storage: 100Mi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sharkey-redis-pvc
+  namespace: sharkey
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: "ebs-ssd"
+  resources:
+    requests:
+      storage: 1Gi
