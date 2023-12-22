@@ -14,4 +14,5 @@ resources:
   - app/stackgres.yaml
   - app/deploy.yaml
   - app/service.yaml
+  - app/middleware.yaml
   - app/route.yaml

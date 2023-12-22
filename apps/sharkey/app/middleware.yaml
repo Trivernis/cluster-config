@@ -1,0 +1,29 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: circuit-breaker
+  namespace: sharkey 
+spec:
+  circuitBreaker:
+    expression: LatencyAtQuantileMS(50.0) > 200 || ResponseCodeRatio(500, 600, 0, 600) > 0.5
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: ratelimit
+  namespace: sharkey
+spec:
+  rateLimit:
+    average: 120
+    burst: 60
+    period: 1s
+    sourceCriterion:
+      ipStrategy:
+        excludedIPs:
+        - 127.0.0.1/32   # loopback
+        - 10.0.0.0/16    # bridge network
+        - 10.243.0.0/16  # cluster network
+        - 167.235.111.84 # lb
+        - 128.140.35.44  # node
+        - 5.75.144.230   # node
+        - 144.76.167.59  # node
