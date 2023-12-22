@@ -6,6 +6,8 @@ metadata:
 spec:
   circuitBreaker:
     expression: LatencyAtQuantileMS(50.0) > 200 || ResponseCodeRatio(500, 600, 0, 600) > 0.5
+    fallbackDuration: 2s
+    recoveryDuration: 5s
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
