@@ -16,8 +16,8 @@ metadata:
   namespace: sharkey
 spec:
   rateLimit:
-    average: 120
-    burst: 60
+    average: 250
+    burst: 120
     period: 1s
     sourceCriterion:
       ipStrategy:
