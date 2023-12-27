@@ -1,0 +1,17 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: web
+  namespace: minio
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`minio.trivernis.dev`, `minio.trivernis.net`)
+    kind: Rule
+    middlewares:
+      - name: strict-security-headers
+        namespace: default
+    services:
+    - name: minio
+      port: http
