@@ -7,6 +7,15 @@ spec:
   entryPoints:
     - web
   routes:
+  - match: Host(`minio.trivernis.dev`, `minio.trivernis.net`) && PathPrefix(`/minio/ui`)
+    kind: Rule
+    middlewares:
+      - name: strict-security-headers
+        namespace: default
+      - name: stripprefix-ui
+    services:
+    - name: minio
+      port: minio-console
   - match: Host(`minio.trivernis.dev`, `minio.trivernis.net`)
     kind: Rule
     middlewares:
@@ -14,4 +23,4 @@ spec:
         namespace: default
     services:
     - name: minio
-      port: http
+      port: minio-api
