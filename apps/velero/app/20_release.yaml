@@ -20,7 +20,23 @@ spec:
     metrics:
       serviceMonitor:
         enabled: true
+    initContainers:
+    - name: velero-plugin-for-csi
+      image: velero/velero-plugin-for-csi:v0.6.0
+      imagePullPolicy: IfNotPresent
+      volumeMounts:
+        - mountPath: /target
+          name: plugins
+    - name: velero-plugin-for-aws
+      image: velero/velero-plugin-for-aws:v1.8.0
+      imagePullPolicy: IfNotPresent
+      volumeMounts:
+        - mountPath: /target
+          name: plugins
+    credentials:
+      existingSecret: velero-secret 
     configuration:
+      volumeSnapshotLocation: []
       backupStorageLocation:
       - name: cluster-minio
         provider: aws
@@ -28,7 +44,7 @@ spec:
         default: true
         credential: 
           name: velero-secret
-          key: minio-credentials
+          key: cloud
         config:
           region: minio
           s3ForcePathStyle: "true"
