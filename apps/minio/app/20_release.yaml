@@ -30,3 +30,9 @@ spec:
       prometheus.io/scrape: "true"
       prometheus.io/path: "/minio/v2/metrics/cluster"
       prometheus.io/port: "9000"
+    extraEnvVars:
+      - name: MINIO_BROWSER_REDIRECT_URL
+        value: https://minio.trivernis.dev/minio/ui
+      - name: MINIO_SERVER_URL
+        value: https://minio.trivernis.dev
+
