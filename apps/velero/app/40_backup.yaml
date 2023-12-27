@@ -1,0 +1,11 @@
+apiVersion: velero.io/v1
+kind: Backup
+metadata:
+  name: oneshot-backup
+  namespace: velero
+spec:
+  excludedNamespaces:
+  - metrics
+  - woodpecker
+  - syncthing
+  snapshotVolumes: false
