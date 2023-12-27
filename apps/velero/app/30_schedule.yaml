@@ -10,4 +10,5 @@ spec:
     - metrics
     - woodpecker
     - syncthing
-    snapshotVolumes: false
+    snapshotVolumes: true
+    storageLocation: storageLocation
