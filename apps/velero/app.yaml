@@ -7,3 +7,4 @@ resources:
   - app/00_namespace.yaml
   - app/10_sealedsecret.yaml
   - app/20_release.yaml
+  - app/30_schedule.yaml

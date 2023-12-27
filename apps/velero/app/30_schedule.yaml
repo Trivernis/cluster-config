@@ -1,0 +1,13 @@
+apiVersion: velero.io/v1
+kind: Schedule
+metadata:
+  name: scheduled-backup
+  namespace: velero
+spec:
+  schedule: 0 */6 * * *
+  template:
+    excludedNamespaces:
+    - metrics
+    - woodpecker
+    - syncthing
+    snapshotVolumes: false
