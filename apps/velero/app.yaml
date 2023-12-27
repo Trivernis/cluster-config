@@ -1,10 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: minio
+namespace: velero
 metadata:
-  name: minio
+  name: velero
 resources:
   - app/00_namespace.yaml
   - app/10_sealedsecret.yaml
   - app/20_release.yaml
-  - app/30_route.yaml
