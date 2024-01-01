@@ -132,6 +132,9 @@ data:
 
     # Sign to ActivityPub GET request (default: true)
     signToActivityPubGet: true
+    # check that inbound ActivityPub GET requests are signed ("authorized fetch")
+    checkActivityPubGetSignature: true
+    
 
     #allowedPrivateNetworks: [
     #  '127.0.0.1/32'
