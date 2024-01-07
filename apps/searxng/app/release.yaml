@@ -120,14 +120,14 @@ spec:
         #   # these plugins are enabled if nothing is configured ..
         #   - 'Hash plugin'
         #   - 'Search on category select'
-        #   - 'Self Information'
-        #   - 'Tracker URL remover'
-        #   - 'Ahmia blacklist'  # activation depends on outgoing.using_tor_proxy
+          - 'Self Information'
+          - 'Tracker URL remover'
+          - 'Ahmia blacklist'  # activation depends on outgoing.using_tor_proxy
         #   # these plugins are disabled if nothing is configured ..
           - 'Hostname replace'  # see hostname_replace configuration below
         #   - 'Open Access DOI rewrite'
           - 'Vim-like hotkeys'
-        #   - 'Tor check plugin'
+          - 'Tor check plugin'
         #   # Read the docs before activate: auto-detection of the language could be
         #   # detrimental to users expectations / users can activate the plugin in the
         #   # preferences if they want.
@@ -141,9 +141,11 @@ spec:
           # '(.*\.)?youtube-noocookie\.com$': 'yotter.example.com'
           # '(.*\.)?reddit\.com$': 'teddit.net'
           # '(.*\.)?redd\.it$': 'teddit.net'
-          '(www\.)?twitter\.com$': 'nitter.sethforprivacy.com'
+          '(www\.)?twitter\.com$': 'nitter.woodland.cafe'
           # to remove matching host names from result list, set value to false
           # 'spam\.example\.com': false
+          '(.*\.)?g2\.\com$': false
+          'alternativeto\.net$': false
 
         categories_as_tabs:
           general:
@@ -154,7 +156,7 @@ spec:
           music:
           it:
           science:
-          files:
+          # files:
           social media:
 
         engines:
