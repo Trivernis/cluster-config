@@ -160,6 +160,10 @@ spec:
           social media:
 
         engines:
+        ### Modified engines
+          - name: wikipedia
+            weight: 2
+          
         ### Custom Engines ###
 
           - name: safebooru
