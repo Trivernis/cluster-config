@@ -68,6 +68,11 @@ spec:
           # use codes from 'languages.py'
           default_lang: "all"
 
+          formats:
+            - html
+            - json
+            - rss
+
         server:
           limiter: false  # rate limit the number of request on the instance, block some bots
 
@@ -163,6 +168,13 @@ spec:
         ### Modified engines
           - name: wikipedia
             weight: 2
+
+          - name: presearch
+            disabled: false
+            weight: 1.2
+
+          - name: wiby
+            disabled: false
           
         ### Custom Engines ###
 
