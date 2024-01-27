@@ -9,7 +9,7 @@ spec:
   routes:
   - match: HostSNI(`*`)
     services:
-    - name: minecraft
+    - name: minecraft-minecraft
       port: minecraft
 ---
 apiVersion: traefik.containo.us/v1alpha1
@@ -23,5 +23,5 @@ spec:
   routes:
   - match: HostSNI(`*`)
     services:
-    - name: minecraft
+    - name: minecraft-minecraft
       port: voicechat
