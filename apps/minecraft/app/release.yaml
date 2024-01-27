@@ -50,12 +50,21 @@ spec:
             enabled: true
             embedded: true
             port: 24454
+        - name: map
+          containerPort: 8100
+          protocol: TCP
+          ingress: 
+            enabled: false
+          service:
+            enabled: true
+            embedded: true
+            port: 8100
       modrinth:
         projects:
           - fabric-api
           - silk
-          # - bluemap
-          # - bmarker
+          - bluemap
+          - bmarker
           - chunky
           - chunkyborder
           - carpet

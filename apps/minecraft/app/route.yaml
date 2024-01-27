@@ -25,3 +25,23 @@ spec:
     services:
     - name: minecraft-minecraft
       port: voicechat
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: web-map
+  namespace: minecraft
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`minecraft-map.trivernis.net`)
+    kind: Rule
+    middlewares:
+      - name: strict-security-headers
+        namespace: default
+      - name: ratelimit
+      - name: circuit-breaker
+    services:
+    - name: minecraft-minecraft
+      port: map
