@@ -9,8 +9,8 @@ spec:
     spec:
       chart: minecraft
       sourceRef:
-        kind: GitRepository
-        name: minecraft
+        kind: HelmRepository
+        name: minecraft-charts
         namespace: repos
   interval: 60m
   install:
