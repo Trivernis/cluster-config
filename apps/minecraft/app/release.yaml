@@ -44,10 +44,10 @@ spec:
         projects:
           - fabric-api
           - silk
-          - bluemap
-          - bmarker
+          # - bluemap
+          # - bmarker
           - chunky
-          - chunkyborder
+          # - chunkyborder
           - carpet
           - carpet-tis-addition
           - fabric-language-kotlin
