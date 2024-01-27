@@ -1,0 +1,61 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: minecraft
+  namespace: minecraft
+spec:
+  releaseName: minecraft
+  chart:
+    spec:
+      chart: minecraft
+      sourceRef:
+        kind: GitRepository
+        name: minecraft
+        namespace: repos
+  interval: 60m
+  install:
+    remediation:
+      retries: 3
+  values:
+    resources:
+      requests:
+        memory: 512Mi
+    persistence:
+      storageClass: ebs-ssd
+      dataDir:
+        enabled: true
+    extraEnv:
+      USE_AIKAR_FLAGS: true
+    minecraftServer:
+      eula: true
+      type: FABRIC
+      version: 1.20.4
+      difficulty: hard
+      motd: Welcome to ClusterCraft!
+      ops: trivernis
+      pvp: true
+      forceRedownload: true
+      removeOldMods: true
+      rcon:
+        enabled: true
+        withGeneratedPassword: true
+      memory: 4G
+      modrinth:
+        projects:
+          - fabric-api
+          - silk
+          - bluemap
+          - bmarker
+          - chunky
+          - chunkyborder
+          - carpet
+          - carpet-tis-addition
+          - fabric-language-kotlin
+          - universal-graves
+          - ledger
+          - lithium
+          - phosphor
+          - spark
+          - simple-voice-chat
+          - debugify
+
