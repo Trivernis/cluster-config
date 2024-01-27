@@ -44,6 +44,8 @@ spec:
         - name: voicechat
           containerPort: 24454
           protocol: TCP
+          ingress: 
+            enabled: false
           service:
             enabled: true
             embedded: true
