@@ -47,14 +47,14 @@ spec:
           # - bluemap
           # - bmarker
           - chunky
-          # - chunkyborder
+          - chunkyborder
           - carpet
           - carpet-tis-addition
           - fabric-language-kotlin
           - universal-graves
           - ledger
           - lithium
-          - phosphor
+          - starlight
           - spark
           - simple-voice-chat
           - debugify
