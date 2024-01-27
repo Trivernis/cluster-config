@@ -13,7 +13,7 @@ spec:
       port: minecraft
 ---
 apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRouteTCP
+kind: IngressRouteUDP
 metadata:
   name: voice
   namespace: minecraft
@@ -35,7 +35,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`minecraft-map.trivernis.net`)
+  - match: Host(`minecraft-map.trivernis.net`, `minecraft-map.trivernis.dev`)
     kind: Rule
     middlewares:
       - name: strict-security-headers
