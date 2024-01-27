@@ -1,7 +1,7 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRouteTCP
 metadata:
-  name: minecraft
+  name: game
   namespace: minecraft
 spec:
   entryPoints:
@@ -11,3 +11,17 @@ spec:
     services:
     - name: minecraft
       port: minecraft
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: voice
+  namespace: minecraft
+spec:
+  entryPoints:
+    - minecraft-voice
+  routes:
+  - match: HostSNI(`*`)
+    services:
+    - name: minecraft
+      port: voicechat

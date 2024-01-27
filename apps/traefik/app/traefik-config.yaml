@@ -52,6 +52,12 @@ spec:
         exposedPort: 25565
         protocol: TCP
 
+      minecraft-voice:
+        port: 24454
+        expose: true
+        exposedPort: 24454
+        protocol: TCP
+
     metrics:
       prometheus:
         headerLabels:

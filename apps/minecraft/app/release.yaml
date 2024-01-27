@@ -40,6 +40,14 @@ spec:
         enabled: true
         withGeneratedPassword: true
       memory: 4G
+      extraPorts:
+        - name: voicechat
+          containerPort: 24454
+          protocol: TCP
+          service:
+            enabled: true
+            embedded: true
+            port: 24454
       modrinth:
         projects:
           - fabric-api
