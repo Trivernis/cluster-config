@@ -19,7 +19,7 @@ metadata:
   namespace: minecraft
 spec:
   entryPoints:
-    - sct-discovery
+    - minecraft-voice
   routes:
   - services:
     - name: minecraft-minecraft
