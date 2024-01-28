@@ -43,7 +43,7 @@ spec:
       extraPorts:
         - name: voicechat
           containerPort: 24454
-          protocol: TCP
+          protocol: UDP
           ingress: 
             enabled: false
           service:

@@ -19,10 +19,9 @@ metadata:
   namespace: minecraft
 spec:
   entryPoints:
-    - minecraft-voice
+    - sct-discovery
   routes:
-  - match: HostSNI(`*`)
-    services:
+  - services:
     - name: minecraft-minecraft
       port: voicechat
 ---
