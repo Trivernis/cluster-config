@@ -39,8 +39,6 @@ spec:
     middlewares:
       - name: strict-security-headers
         namespace: default
-      - name: ratelimit
-      - name: circuit-breaker
     services:
     - name: minecraft-minecraft
       port: map
