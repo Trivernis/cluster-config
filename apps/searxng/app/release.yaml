@@ -151,6 +151,8 @@ spec:
           '(.*\.)?g2\.\com$': false
           'alternativeto\.net$': false
           'easycodeforall\.com$': false
+          'slant\.co$': false
+          'stackshare\.io$': false
 
         categories_as_tabs:
           general:
