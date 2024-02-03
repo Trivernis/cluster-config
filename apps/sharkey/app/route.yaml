@@ -13,7 +13,6 @@ spec:
       - name: strict-security-headers
         namespace: default
       - name: ratelimit
-      - name: circuit-breaker
     services:
     - name: sharkey
       port: http 
