@@ -78,3 +78,12 @@ spec:
           - simple-voice-chat
           - debugify
 
+    mcbackup:
+      enabled: true
+      pruneBackupDays: 2
+      persistence:
+        storage-class: ebs-hdd
+        backupDir:
+          enabled: true
+          
+          
