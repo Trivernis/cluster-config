@@ -80,6 +80,7 @@ spec:
           - spark
           - simple-voice-chat
           - debugify
+          - inventory-management
 
     mcbackup:
       enabled: true
