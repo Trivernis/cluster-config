@@ -36,6 +36,9 @@ spec:
       pvp: true
       forceRedownload: true
       removeOldMods: true
+      vanillaTweaksShareCodes: 
+        - vYxGa9
+        - fN49Us
       rcon:
         enabled: true
         withGeneratedPassword: true
