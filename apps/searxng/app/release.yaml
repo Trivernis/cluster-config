@@ -148,7 +148,7 @@ spec:
           '(www\.)?twitter\.com$': 'nitter.woodland.cafe'
           # to remove matching host names from result list, set value to false
           # 'spam\.example\.com': false
-          '(.*\.)?g2\.\com$': false
+          '(.*\.)?g2\.com$': false
           'alternativeto\.net$': false
           'easycodeforall\.com$': false
           'slant\.co$': false
@@ -181,22 +181,7 @@ spec:
           'issuehint\.com$': false
           'kotaeta\.com$': false
           'code\.i$': false
-          'qastack\.jp$': false
-          'qastack\.ru$': false
-          'qastack\.it$': false
-          'qastack\.mx$': false
-          'qastack\.com$': false
-          'qastack\.info$': false
-          'qastack\.in$': false
-          'qastack\.com$': false
-          'qastack\.fr$': false
-          'qastack\.cn$': false
-          'qastack\.com$': false
-          'qastack\.co$': false
-          'qastack\.kr$': false
-          'qastack\.vn$': false
-          'qastack\.net$': false
-          'qastack\.id$': false
+          '(.*\.)?qastack\.(jp|ru|it|mx|com|info|in|fr|cn|co|kr|vn|net|id)$': false
           'coder\.work$': false
           'webdevqa\.jp$': false
           'codeflow\.site$': false
