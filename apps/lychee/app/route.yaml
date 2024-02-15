@@ -1,4 +1,14 @@
 apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: lychee-headers
+  namespace: lychee
+spec:
+  headers:
+    customRequestHeaders:
+      X-Forwarded-Proto: https
+---
+apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: web
@@ -12,6 +22,7 @@ spec:
     middlewares:
       - name: security-headers
         namespace: default
+      - name: lychee-headers
     services:
     - name: lychee
       port: http 
