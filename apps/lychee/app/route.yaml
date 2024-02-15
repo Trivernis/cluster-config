@@ -7,6 +7,7 @@ spec:
   headers:
     customRequestHeaders:
       X-Forwarded-Proto: https
+      X-Forwarded-SSL: on
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
@@ -19,10 +20,10 @@ spec:
   routes:
   - match: Host(`lychee.trivernis.net`)
     kind: Rule
-    # middlewares:
-      # - name: strict-security-headers
-      #   namespace: default
-      # - name: lychee-headers
+    middlewares:
+      - name: strict-security-headers
+        namespace: default
+      - name: lychee-headers
     services:
     - name: lychee
       port: http 
