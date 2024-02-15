@@ -17,12 +17,12 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`lychee.trivernis.net`, `lychee.iulse.com`)
+  - match: Host(`lychee.trivernis.net`)
     kind: Rule
-    middlewares:
+    # middlewares:
       # - name: strict-security-headers
       #   namespace: default
-      - name: lychee-headers
+      # - name: lychee-headers
     services:
     - name: lychee
       port: http 
