@@ -38,7 +38,7 @@ spec:
           value: Europe/Berlin
         - name: DB_CONNECTION
           value: sqlite
-        - name: DB_DATABSE
+        - name: DB_DATABASE
           value: /lychee/db/lychee.db
         - name: APP_URL
           value: https://lychee.trivernis.net
