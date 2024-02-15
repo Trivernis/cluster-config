@@ -16,15 +16,15 @@ spec:
         app: lychee
     spec:
       containers:
-      - image: lycheeorg/lychee:v5.1.2
+      - image: linuxserver/lychee:5.1.2
         name: lychee
         volumeMounts:
         - name: lychee-uploads
-          mountPath: "/lychee/uploads"
+          mountPath: "/pictures"
         - name: lychee-config
-          mountPath: "/lychee/conf"
-        - name: lychee-sym
-          mountPath: "/lychee/sym"
+          mountPath: "/config"
+        # - name: lychee-sym
+          # mountPath: "/lychee/sym"
         - name: lychee-sqlite
           mountPath: "/lychee/db"
         ports:
