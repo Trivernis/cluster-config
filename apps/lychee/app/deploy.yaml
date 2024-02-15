@@ -44,8 +44,8 @@ spec:
           value: https://lychee.trivernis.net
         - name: APP_FORCE_HTTPS
           value: "true"
-        - name: APP_DEBUG
-          value: "true"
+        - name: TRUSTED_PROXIES
+          value: "*"
       volumes:
       - name: lychee-sym
         persistentVolumeClaim:
