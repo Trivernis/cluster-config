@@ -1,14 +1,4 @@
 apiVersion: traefik.containo.us/v1alpha1
-kind: Middleware
-metadata:
-  name: tandoor-headers
-  namespace: tandoor
-spec:
-  headers:
-    customRequestHeaders:
-      X-Forwarded-Proto: https
----
-apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: web
@@ -22,7 +12,6 @@ spec:
     middlewares:
       - name: security-headers
         namespace: default
-      - name: tandoor-headers
     services:
     - name: tandoor
       port: static
@@ -34,4 +23,5 @@ spec:
       - name: tandoor-headers
     services:
     - name: tandoor
+      passHostHeader: true
       port: http
