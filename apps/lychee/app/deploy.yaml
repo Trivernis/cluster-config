@@ -16,19 +16,21 @@ spec:
         app: lychee
     spec:
       containers:
-      - image: linuxserver/lychee:5.1.2
+      - image: lycheeorg/lychee:v5.1.2
         name: lychee
         volumeMounts:
         - name: lychee-uploads
-          mountPath: "/pictures"
+          mountPath: "/lychee/uploads"
         - name: lychee-config
-          mountPath: "/config"
+          mountPath: "/lychee/conf"
+        - name: lychee-sym
+          mountPath: "/lychee/sym"
         - name: lychee-sqlite
           mountPath: "/lychee/db"
         ports:
-          - containerPort: 80
-            name: http 
-            protocol: TCP    
+        - containerPort: 80
+          name: http 
+          protocol: TCP    
         env:
         - name: PHP_TZ
           value: Europe/Berlin
@@ -43,7 +45,7 @@ spec:
         - name: APP_FORCE_HTTPS
           value: "true"
         - name: TRUSTED_PROXIES
-          value: "*"
+          value: '167.235.111.84,10.0.0.254'
       volumes:
       - name: lychee-sym
         persistentVolumeClaim:
