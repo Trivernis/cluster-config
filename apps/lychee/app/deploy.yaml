@@ -43,7 +43,7 @@ spec:
         - name: APP_URL
           value: https://lychee.trivernis.net
         - name: APP_FORCE_HTTPS
-          value: true
+          value: "true"
       volumes:
       - name: lychee-sym
         persistentVolumeClaim:
