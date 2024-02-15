@@ -7,6 +7,8 @@ spec:
   headers:
     customRequestHeaders:
       X-Forwarded-Proto: https
+      X-Forwarded-Port: "443"
+      X-Forwarded-Host: lychee.trivernis.net
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
