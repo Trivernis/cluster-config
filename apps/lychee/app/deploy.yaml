@@ -19,7 +19,7 @@ spec:
       - image: lycheeorg/lychee:v5.1.2
         name: lychee
         volumeMounts:
-        - name: lychee-files
+        - name: lychee-uploads
           mountPath: "/lychee/uploads"
         - name: lychee-config
           mountPath: "/lychee/conf"
