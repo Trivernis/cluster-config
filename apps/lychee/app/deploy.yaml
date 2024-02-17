@@ -46,6 +46,8 @@ spec:
           value: '*'
         - name: APP_FORCE_HTTPS
           value: 'true'
+        - name: LIVEWIRE_ENABLED
+          value: 'false'
       volumes:
       - name: lychee-sym
         persistentVolumeClaim:
