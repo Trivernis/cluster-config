@@ -1,0 +1,25 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: iulse-redirect
+  namespace: iulse
+spec:
+  redirectRegex:
+    regex: ^http(s)?://(www\.)?iulse\.com/(.*)
+    replacement: https://trivernis.net/${3}
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: web
+  namespace: iulse
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`iulse.com`, `www.iulse.com`)
+    kind: Rule
+    middlewares:
+      - name: iulse-redirect
+      - name: strict-security-headers
+        namespace: default
