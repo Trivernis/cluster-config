@@ -30,7 +30,7 @@ spec:
           readOnly: true
         command: ['sh', '-c', 'cat /config/default.yml > /sharkey/.config/default.yml; cat /config-secret/secret.yml >> /sharkey/.config/default.yml;']
       containers:
-      - image: git.joinsharkey.org/sharkey/sharkey:2023.12.0
+      - image: registry.activitypub.software/transfem-org/sharkey:2024.3.1
         name: sharkey
         volumeMounts:
         - name: sharkey-files
