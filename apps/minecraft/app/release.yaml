@@ -84,7 +84,7 @@ spec:
 
     mcbackup:
       enabled: true
-      pruneBackupDays: 2
+      pruneBackupDays: 1
       persistence:
         storage-class: ebs-hdd
         backupDir:
