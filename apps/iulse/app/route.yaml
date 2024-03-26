@@ -5,8 +5,8 @@ metadata:
   namespace: iulse
 spec:
   redirectRegex:
-    regex: ^http(s)?://(www\.)?iulse\.com/(.*)
-    replacement: https://trivernis.net/${3}
+    regex: .*
+    replacement: https://trivernis.net
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
