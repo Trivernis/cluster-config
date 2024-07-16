@@ -83,7 +83,7 @@ spec:
           - inventory-management
 
     mcbackup:
-      enabled: true
+      enabled: false
       pruneBackupDays: 1
       persistence:
         storage-class: ebs-hdd
