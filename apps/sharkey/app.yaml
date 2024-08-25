@@ -15,4 +15,4 @@ resources:
   - app/deploy.yaml
   - app/service.yaml
   - app/middleware.yaml
-  - app/route.yaml
+  # - app/route.yaml
