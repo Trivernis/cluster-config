@@ -10,4 +10,4 @@ resources:
   - app/postgres-sealedsecret.yaml
   - app/postgres.yaml
   - app/release.yaml
-  # - app/route.yaml
+  - app/route.yaml
