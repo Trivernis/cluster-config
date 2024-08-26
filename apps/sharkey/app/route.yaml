@@ -14,5 +14,5 @@ spec:
         namespace: default
       - name: ratelimit
     services:
-    - name: invalid
+    - name: sharkey
       port: http 
